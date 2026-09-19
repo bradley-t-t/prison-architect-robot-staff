@@ -19,6 +19,11 @@ lights down, which is the game's blink. Guards keep the game's guard blue,
 Armed Guards are gunmetal with a belt of shells, and Dog Handlers are navy with
 a K-9 plate.
 
+The game draws a guard's stab vest over whatever the guard looks like, cut to
+a person's shoulders, which on a robot is a dark bib across the chest. The mod
+ships the game's people sheet with the vest's pictures emptied, so a vest
+still protects and is still named on the guard, and nothing is drawn for it.
+
 ## What a robot is
 
 - It never tires. The three kinds carry the game's own `DoesNotTire`.
@@ -41,7 +46,8 @@ are on that list, so a mod cannot take the toilet and the canteen away from
 guards alone. The game's own Staff Needs option turns needs off for all staff.
 
 The mod redefines the Guard, the Armed Guard and the Dog Handler, so any other
-mod that does the same, Additional Guard Sprites for one, has to be off.
+mod that does the same, Additional Guard Sprites for one, has to be off, and
+so does any mod that ships its own `people.png`.
 
 ## Layout
 

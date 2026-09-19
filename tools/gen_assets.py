@@ -2,6 +2,7 @@
 
 Outputs, relative to the mod root (the parent of this tools/ folder):
   data/sprites.png                    the robots, a model a row, and the Robot Uplink
+  data/people.png                     the game's people sheet with the stab vest taken off it
   data/materials.txt                  the game's Guard, Armed Guard and Dog Handler, redefined, and the uplink
   data/crookedguards_settings.txt     the game's own settings with corruption turned off
   data/language/base-language.txt     names, build-menu text and the tooltip
@@ -39,6 +40,13 @@ VARIANTS = 128
 TOUGHER = 2                     # twice the punishment before one goes down
 UPLINK_X = 8                    # the uplink's picture, in cells, beside the robots
 UPLINK_PRICE = 1500
+
+# The game draws a guard's stab vest over whatever the guard looks like, from a
+# block of its people sheet cut to a person's shoulders, which on a robot is a
+# dark bib across the chest and halfway up the head. Nobody but the three kinds
+# of guard wears one, so the block is emptied: the vest still protects, and is
+# still named on the guard, and nothing is drawn for it.
+VEST_BLOCK = (1280, 384, 1536, 704)
 
 # Every line of the game's settings that decides whether a guard turns. The
 # counts are made too large to reach rather than zero, which the game may
@@ -92,6 +100,14 @@ def build_thumbnail():
         big = model("front").resize((128, 128), Image.NEAREST)
         im.paste(big, ((i % 2) * 128, (i // 2) * 128), big)
     return im
+
+
+def build_people(game):
+    with Image.open(os.path.join(game, "people.png")) as sheet:
+        sheet = sheet.convert("RGBA")
+    box = VEST_BLOCK
+    sheet.paste(Image.new("RGBA", (box[2] - box[0], box[3] - box[1]), (0, 0, 0, 0)), box[:2])
+    return sheet
 
 
 def game_object(materials, name):
@@ -185,6 +201,7 @@ def main():
         settings = f.read()
     os.makedirs(os.path.join(DATA, "language"), exist_ok=True)
     save_image(build_sprites(), os.path.join(DATA, "sprites.png"))
+    save_image(build_people(game), os.path.join(DATA, "people.png"))
     with open(os.path.join(DATA, "materials.txt"), "w") as f:
         f.write(materials_text(materials))
     with open(os.path.join(DATA, "crookedguards_settings.txt"), "w") as f:
@@ -192,7 +209,7 @@ def main():
     with open(os.path.join(DATA, "language", "base-language.txt"), "w") as f:
         f.write(language_text())
     save_image(build_thumbnail(), os.path.join(ROOT, "thumbnail.png"))
-    print("wrote sprites.png, materials.txt, crookedguards_settings.txt, base-language.txt, thumbnail.png")
+    print("wrote sprites.png, people.png, materials.txt, crookedguards_settings.txt, base-language.txt, thumbnail.png")
 
 
 if __name__ == "__main__":
