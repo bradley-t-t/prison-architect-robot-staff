@@ -39,7 +39,7 @@ AMBER = dict(core=(255, 176, 48, 255), hot=(255, 240, 200, 255), dim=(120, 70, 1
 GREEN = dict(core=(110, 240, 130, 255), hot=(225, 255, 230, 255), dim=(26, 100, 48, 255))
 CRIMSON = dict(core=(255, 72, 64, 255), hot=(255, 214, 208, 255), dim=(118, 22, 22, 255))
 
-FACINGS = ["front", "back", "side", "front"]
+FACINGS = ["front", "back", "side", "blink"]
 CX = BOX / 2
 
 
@@ -84,6 +84,14 @@ def bell(d, shoulder, hem, top, fill, hi, lo, bottom=61):
                    (CX + hem, bottom - 11)]), fill=lo)
 
 
+def look(facing, glow):
+    """The fourth picture is the game's blink: the front again with its
+    lights down."""
+    if facing == "blink":
+        return "front", dict(core=glow["dim"], hot=glow["core"], dim=DARK)
+    return facing, glow
+
+
 def lamp(d, x, y, r, glow):
     d.ellipse(s(x - r, y - r, x + r, y + r), fill=glow["dim"])
     d.ellipse(s(x - r * 0.72, y - r * 0.72, x + r * 0.72, y + r * 0.72), fill=glow["core"])
@@ -99,9 +107,9 @@ def antenna(d, x, top, glow, base=9):
 # The standard unit. A rounded head under a peaked cap plate with a gold
 # badge, a slim visor, a core in the chest and a badge beside it.
 
-def patrol(facing):
+def patrol(facing, kit=None):
     r = Robot()
-    glow = CYAN
+    facing, glow = look(facing, CYAN)
 
     def body(d):
         bell(d, 17, 24, 31, BLUE, BLUE_HI, BLUE_LO)
@@ -156,6 +164,7 @@ def patrol(facing):
             d.polygon(pts([(CX - 12.5, 11), (CX - 19, 13.5), (CX - 12.5, 14)]), fill=NAVY_LO)
             d.polygon(pts([(CX - 10, 6.5), (CX - 6.5, 6.5), (CX - 6.5, 9.5), (CX - 8.2, 11), (CX - 10, 9.5)]), fill=GOLD)
     r.part(cap)
+    wear(r, kit, facing, 17)
     return r.done()
 
 
@@ -163,9 +172,9 @@ def patrol(facing):
 # The riot-line unit. A squat head sunk between big pauldrons that carry a
 # red and a blue siren, slanted amber eyes, and a vented chest.
 
-def heavy(facing):
+def heavy(facing, kit=None):
     r = Robot()
-    glow = AMBER
+    facing, glow = look(facing, AMBER)
 
     def body(d):
         bell(d, 21, 29, 32, GUN, GUN_HI, GUN_LO)
@@ -211,6 +220,7 @@ def heavy(facing):
             d.rounded_rectangle(s(x - 3.5, 22.5, x + 3.5, 28), radius=2 * UP, fill=colour)
             d.rectangle(s(x - 2, 23.5, x - 0.5, 26), fill=(255, 255, 255, 170))
     r.part(pauldrons)
+    wear(r, kit, facing, 21)
     return r.done()
 
 
@@ -218,9 +228,9 @@ def heavy(facing):
 # The slim unit. A tall drum of a head on a thin neck with one big green
 # lens, a long whip antenna, and a striped sash across a narrow body.
 
-def scout(facing):
+def scout(facing, kit=None):
     r = Robot()
-    glow = GREEN
+    facing, glow = look(facing, GREEN)
 
     def body(d):
         bell(d, 12, 18, 33, NAVY, NAVY_HI, NAVY_LO)
@@ -265,6 +275,7 @@ def scout(facing):
             d.ellipse(s(CX - 7, 11, CX + 7, 24), fill=GUN)
             lamp(d, CX, 17.5, 5.4, glow)
     r.part(head)
+    wear(r, kit, facing, 12)
     return r.done()
 
 
@@ -272,9 +283,9 @@ def scout(facing):
 # The heavy-hitter. A wedge of a head, wider at the brow, with a red T
 # visor, twin stub antennae, plated shoulders and a gold chevron on the chest.
 
-def enforcer(facing):
+def enforcer(facing, kit=None):
     r = Robot()
-    glow = CRIMSON
+    facing, glow = look(facing, CRIMSON)
 
     def body(d):
         bell(d, 20, 27, 32, NAVY, NAVY_HI, NAVY_LO)
@@ -321,17 +332,66 @@ def enforcer(facing):
             d.rectangle(s(CX - 0.7, 17.3, CX + 0.7, 25.5), fill=glow["core"])
             d.rectangle(s(CX - 8, 15.6, CX - 3, 16.3), fill=glow["hot"])
     r.part(head)
+    wear(r, kit, facing, 20)
     return r.done()
 
 
 MODELS = [patrol, heavy, scout, enforcer]
 
+# What marks out the three kinds of guard. Each is the same four models in its
+# own colours, and the armed and dog units wear something over the top: a belt
+# of shells, as the game's Armed Guards do, or the handlers' K-9 plate.
+KINDS = {
+    "Guard": dict(),
+    "ArmedGuard": dict(
+        BLUE=(62, 66, 76, 255), BLUE_HI=(98, 104, 116, 255), BLUE_LO=(38, 40, 48, 255),
+        NAVY=(48, 50, 58, 255), NAVY_HI=(84, 88, 100, 255), NAVY_LO=(28, 30, 36, 255),
+        GUN=(40, 42, 50, 255), GUN_HI=(76, 80, 92, 255), GUN_LO=(22, 24, 30, 255), kit="shells"),
+    "DogHandler": dict(
+        BLUE=(30, 44, 74, 255), BLUE_HI=(60, 84, 124, 255), BLUE_LO=(16, 24, 46, 255),
+        NAVY=(24, 34, 60, 255), NAVY_HI=(52, 72, 110, 255), NAVY_LO=(12, 18, 36, 255),
+        GUN=(44, 56, 84, 255), GUN_HI=(74, 92, 126, 255), GUN_LO=(24, 32, 52, 255), kit="k9"),
+}
 
-def sheet():
-    """The sixteen pictures in the game's own arrangement: a model a row,
-    front, back, side and front again."""
-    im = Image.new("RGBA", (BOX * 4, BOX * 4), (0, 0, 0, 0))
-    for row, model in enumerate(MODELS):
-        for col, facing in enumerate(FACINGS):
-            im.paste(model(facing), (col * BOX, row * BOX))
-    return im
+# K, a dash and 9 on a three by five grid.
+LETTERS = {"K": ["1.1", "1.1", "11.", "1.1", "1.1"], "-": ["...", "...", "11.", "...", "..."],
+           "9": ["111", "1.1", "111", "..1", "111"]}
+
+
+def wear(r, kit, facing, half):
+    """Lays a kind's kit over a finished robot. half is how wide the body is
+    where the kit sits."""
+    if kit == "shells" and facing != "back":
+        def shells(d):
+            d.rectangle(s(CX - half, 47, CX + half, 51.5), fill=DARK)
+            for i, x in enumerate(range(int(-half) + 2, int(half) - 1, 3)):
+                d.rectangle(s(CX + x, 48, CX + x + 1.6, 50.5), fill=RED if i % 2 else HAZARD)
+        r.part(shells)
+    if kit == "k9" and facing != "side":
+        def plate(d):
+            d.rounded_rectangle(s(CX - 9, 52, CX + 9, 60), radius=1 * UP, fill=DARK)
+            x = CX - 6.5
+            for ch in "K-9":
+                for row, line in enumerate(LETTERS[ch]):
+                    for col, bit in enumerate(line):
+                        if bit == "1":
+                            d.rectangle(s(x + col * 1.2, 53.2 + row * 1.2, x + col * 1.2 + 1.2, 53.2 + row * 1.2 + 1.2), fill=(240, 244, 248, 255))
+                x += 4.6
+        r.part(plate)
+
+
+def sheet(kind="Guard"):
+    """The sixteen pictures of one kind in the game's own arrangement: a model
+    a row, then front, back, side and the blink."""
+    theme = dict(KINDS[kind])
+    kit = theme.pop("kit", None)
+    saved = {k: globals()[k] for k in theme}
+    globals().update(theme)
+    try:
+        im = Image.new("RGBA", (BOX * 4, BOX * 4), (0, 0, 0, 0))
+        for row, model in enumerate(MODELS):
+            for col, facing in enumerate(FACINGS):
+                im.paste(model(facing, kit), (col * BOX, row * BOX))
+        return im
+    finally:
+        globals().update(saved)

@@ -1,0 +1,24 @@
+
+"Minimum Gang Population (Cumulative)" 1000000
+"Corrupt Every Nth Hired Guard" 1000000
+"Chance to Corrupt One Guard Per Interval" 0.000000
+"Minimum Wait Interval for Next Corruption (Days)" 1000000
+"Crooked Guards to Normal Guards Ratio" 0.000000
+"Crooked Guards to Normal Guards Ratio - with Staff Vetting" 0.000000
+"Contraband Pick Up Duration (Minutes)" 5.000000
+"Contraband Hand-Off Duration (Minutes)" 5.000000
+"Minimum Detection Distance during Hand-Off" 10.00000
+"Bribe Amount"         1.000000
+"Active Bribe Effect Time (Hrs)" 48.00000
+"CI Suspicion During Guard Investigation" 20.00000
+"Player Reward for Firing Crooked Guard" 500
+"Amount - Booze"       2
+"Drop Rate - Booze (%)" 7
+"Amount - Drugs"       1
+"Drop Rate - Drugs (%)" 1
+"Amount - Cigs"        2
+"Drop Rate - Cigs (%)" 1
+"Amount - Needles"     1
+"Drop Rate - Needles (%)" 4
+"Amount - Medicine"    1
+"Drop Rate - Medicine (%)" 1
