@@ -1,4 +1,4 @@
-Name                 "Robot Guards"
+Name                 "Robot Staff"
 Author               Trenton
-Description          "Your staff are robots. Four models, the Patrol, the Heavy, the Scout and the Enforcer, in the uniform of every kind of staff from Guards to Cooks to the Warden. No robot tires or needs the toilet, the canteen or a rest. Guards, Armed Guards and Dog Handlers are never corrupt and cannot be killed. Build one Robot Uplink to service the robots you already had. Turn off any other mod that changes how staff look."
-Version              1.4
+Description          "Your staff are robots. Four models, the Patrol, the Heavy, the Scout and the Enforcer, in the uniform of every kind of staff from Guards to Cooks to the Warden. No robot tires or needs the toilet, the canteen or a rest. Guards, Armed Guards and Dog Handlers are never corrupt and cannot be killed. Build one Robot Uplink to recharge every robot and to repair the ones that guard. Turn off any other mod that changes how staff look."
+Version              1.5

@@ -1,4 +1,4 @@
-# Robot Guards
+# Robot Staff
 
 A Prison Architect mod. Your staff are robots, and the ones that guard are
 built for it.

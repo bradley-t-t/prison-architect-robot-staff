@@ -1,4 +1,4 @@
-"""Builds every generated file the Robot Guards mod ships.
+"""Builds every generated file the Robot Staff mod ships.
 
 Outputs, relative to the mod root (the parent of this tools/ folder):
   data/sprites.png                    the robots, a model a row, and the Robot Uplink
@@ -206,8 +206,9 @@ def needs_text(needs):
 
 
 def language_text():
-    popup = ("Keeps your robot guards running. It tops up the charge of a robot that is flagging and wipes "
-             "clean one that has been corrupted. Build one anywhere; it covers the whole prison.")
+    popup = ("Services your robot staff. It recharges any robot that is running low, and it repairs the robots "
+             "that guard and wipes clean any of them that has been corrupted. Build one anywhere; it covers the "
+             "whole prison.")
     rows = [
         ("object_RobotUplink", "Robot Uplink"),
         ("buildtoolbar_popup_obj_RobotUplink", popup),

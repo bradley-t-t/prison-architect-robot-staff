@@ -1,4 +1,4 @@
-"""Draws the robot guards: four models, each seen from the front, the back
+"""Draws the robots: four models, each seen from the front, the back
 and the side, in the 64-pixel boxes the game keeps its guards in.
 
 Every part of a robot, its body, its shoulders, its head, is painted on a
