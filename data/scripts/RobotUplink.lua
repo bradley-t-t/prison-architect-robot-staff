@@ -12,9 +12,14 @@
 local Find = Object.GetNearbyObjects
 local Set = Object.SetProperty
 
-local KINDS = { "Guard", "ArmedGuard", "DogHandler" }
+-- Every kind of robot, and which of them guard. All of them are recharged;
+-- the guards are also repaired and wiped clean.
+local KINDS = { "Guard", "ArmedGuard", "DogHandler", "Sniper", "Workman", "Foreman", "Cook", "Janitor", "Gardener",
+                "Farmer", "Doctor", "Orderly", "Psychiatrist", "Psychologist", "Warden", "Chief", "Accountant",
+                "Lawyer" }
+local GUARDS = { Guard = true, ArmedGuard = true, DogHandler = true }
 local WHOLE_MAP = 5000
-local ROUND = 6                 -- seconds between looks, one kind a look
+local ROUND = 3                 -- seconds between looks, one kind a look
 local LOW_CHARGE = 70           -- a robot under this is topped up
 local FULL_CHARGE = 100
 
@@ -29,9 +34,11 @@ local function service(kind)
         if (tonumber(robot.Damage) or 0) < 1 then n = n + 1 end     -- a wreck is not online
         local charge = tonumber(robot.Energy)
         if charge and charge < LOW_CHARGE then Set(robot, "Energy", FULL_CHARGE) end
-        if robot.Corrupted == true then Set(robot, "Corrupted", false) end
-        local damage = tonumber(robot.Damage) or 0
-        if damage > 0 and damage < 1 then Set(robot, "Damage", 0) end
+        if GUARDS[kind] then
+            if robot.Corrupted == true then Set(robot, "Corrupted", false) end
+            local damage = tonumber(robot.Damage) or 0
+            if damage > 0 and damage < 1 then Set(robot, "Damage", 0) end
+        end
     end
     online[kind] = n
 end
@@ -42,7 +49,8 @@ function Update(timePassed)
     roundTimer = 0
     turn = turn % #KINDS + 1
     service(KINDS[turn])
-    local total = (online.Guard or 0) + (online.ArmedGuard or 0) + (online.DogHandler or 0)
+    local total = 0
+    for _, n in pairs(online) do total = total + n end
     if tostring(total) ~= shown then
         shown = tostring(total)
         this.Tooltip = { "tooltip_RobotUplink", total, "X" }

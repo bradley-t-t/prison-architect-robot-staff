@@ -5,6 +5,7 @@ Outputs, relative to the mod root (the parent of this tools/ folder):
   data/people.png                     the game's people sheet with the stab vest taken off it
   data/materials.txt                  the game's Guard, Armed Guard and Dog Handler, redefined, and the uplink
   data/crookedguards_settings.txt     the game's own settings with corruption turned off
+  data/needs-staff.txt                the game's own staff needs, switched off
   data/language/base-language.txt     names, build-menu text and the tooltip
   thumbnail.png                       the mod's card image in the game's mod list
 
@@ -32,7 +33,7 @@ DATA = os.path.join(ROOT, "data")
 # square, and its four pictures sit side by side: front, back, side, blink.
 CELL = 32
 KINDS = list(robots.KINDS)
-GUARDS = ["Guard", "ArmedGuard", "DogHandler"]      # the kinds that are built tougher and never tire
+GUARDS = ["Guard", "ArmedGuard", "DogHandler"]      # the kinds that cannot be killed
 MODELS = len(robots.MODELS)
 ACROSS = 5                      # kinds to a row of the sheet
 BLOCK = 8                       # cells a kind takes each way: four pictures across, four models down
@@ -138,7 +139,7 @@ def robot_object(materials, kind, k):
         if re.match(r"\s*(Sprite|SpriteVariants)\s", line):
             continue
         lines.append(line.rstrip())
-    if kind in GUARDS:
+    if not re.search(r"Properties\s+DoesNotTire", "\n".join(lines)):
         lines.append("    Properties           DoesNotTire")
     lines.append(f"    SpriteVariants       {VARIANTS}")
     for v in range(VARIANTS):
@@ -178,6 +179,28 @@ def settings_text(settings):
         m = re.match(r'("([^"]+)"\s+)\S+', line)
         if m and m.group(2) in NEVER:
             line = m.group(1) + NEVER[m.group(2)]
+        out.append(line.rstrip())
+    return "\n".join(out) + "\n"
+
+
+def needs_text(needs):
+    """The game's staff needs with nothing left to drive them. The game raises
+    a need over time only while its definition carries AutoCharge, and it reads
+    that from the definition every tick rather than from the save, so taking
+    the property away stops the toilet, the canteen and the rest for the staff
+    a prison already has. Chance is how likely a new member of staff is to be
+    given the need at all, and at nought nobody hired from then on has any."""
+    out, inside = [], False
+    for line in needs.splitlines():
+        if re.match(r"\s*BEGIN\s+Need\b", line):
+            inside = True
+        elif re.match(r"\s*END\b", line):
+            inside = False
+        if inside and re.match(r"\s*Properties\s+AutoCharge\b", line):
+            continue
+        chance = re.match(r"(\s*Chance\s+)\S+", line)
+        if inside and chance:
+            line = chance.group(1) + "0.000000"
         out.append(line.rstrip())
     return "\n".join(out) + "\n"
 
@@ -222,6 +245,10 @@ def main():
         f.write(materials_text(materials))
     with open(os.path.join(DATA, "crookedguards_settings.txt"), "w") as f:
         f.write(settings_text(settings))
+    with open(os.path.join(game, "needs-staff.txt"), errors="replace") as f:
+        needs = f.read()
+    with open(os.path.join(DATA, "needs-staff.txt"), "w") as f:
+        f.write(needs_text(needs))
     with open(os.path.join(DATA, "language", "base-language.txt"), "w") as f:
         f.write(language_text())
     save_image(build_thumbnail(), os.path.join(ROOT, "thumbnail.png"))

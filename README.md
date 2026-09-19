@@ -49,15 +49,25 @@ and research, is read from the game's own definition when the mod is built,
 and for every kind but those three the look is the only thing that changes.
 
 The Robot Uplink is the backstop. Build one anywhere and it looks at one kind
-of guard every six seconds, tops up the charge of a robot that is flagging,
+of robot every three seconds, tops up the charge of a robot that is flagging,
 repairs one that is damaged and wipes clean one that was already corrupt when
 the mod was switched on.
 
-## What it cannot do
+## What every robot is
 
-The game decides which staff have needs from a list built into it, and Guards
-are on that list, so a mod cannot take the toilet and the canteen away from
-guards alone. The game's own Staff Needs option turns needs off for all staff.
+No robot tires and no robot has needs. Every kind carries the game's own
+`DoesNotTire`, and the mod ships the game's `needs-staff.txt` with nothing left
+to drive a need. The game raises a need over time only while its definition
+carries `AutoCharge`, and it reads that from the definition every tick rather
+than from the save, so with the property gone the toilet, the canteen and the
+rest stop for the staff a prison already has. `Chance` is how likely a new
+member of staff is to be given a need at all, and at nought nobody hired from
+then on has any. A need that was already high when the mod was switched on is
+met once, in the ordinary way, and does not come back.
+
+The Robot Uplink recharges every kind of robot, not only the guards.
+
+## Conflicts
 
 The mod redefines every kind of staff, so any other
 mod that does the same, Additional Guard Sprites for one, has to be off, and

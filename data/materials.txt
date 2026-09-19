@@ -461,6 +461,7 @@ BEGIN Object
     Equipment            Rifle
     Research             GuardTowers
     ZombieTier           High
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
@@ -605,6 +606,7 @@ BEGIN Object
     Properties           Entity
     Properties           Staff
     ZombieTier           Low
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
@@ -753,6 +755,7 @@ BEGIN Object
     Equipment            Clipboard
 	MaxAllowed			 5
     ZombieTier           Medium
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 0 y 8 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 0 y 10 w 2 h 2 RotateType 1 END
@@ -897,6 +900,7 @@ BEGIN Object
     Properties           Entity
     Properties           Staff
     ZombieTier           Low
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
@@ -1041,6 +1045,7 @@ BEGIN Object
     Properties           Entity
     Properties           Staff
     ZombieTier           Low
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
@@ -1185,6 +1190,7 @@ BEGIN Object
     Properties           Entity
     Properties           Staff
     ZombieTier           Low
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
@@ -1330,6 +1336,7 @@ BEGIN Object
 	EscapeModeKillXp     25
     VersionAdded        4000
     ZombieTier           Low
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
@@ -1477,6 +1484,7 @@ BEGIN Object
     Properties           Staff
     Equipment            Needle
     ZombieTier           Low
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 0 y 16 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 0 y 18 w 2 h 2 RotateType 1 END
@@ -1626,6 +1634,7 @@ Name                 	Orderly
 	VersionAdded		 2000
 	ToolbarSprite		d_OrderlyToolbar
     ZombieTier           Medium
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
@@ -1772,6 +1781,7 @@ BEGIN Object
     Properties           Staff
 	VersionAdded		 2000
     ZombieTier          Medium
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
@@ -1918,6 +1928,7 @@ BEGIN Object
     Properties           Administrator
     Properties           Staff
     ZombieTier           Medium
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
@@ -2065,6 +2076,7 @@ BEGIN Object
     Properties           Staff
     Equipment            Clipboard
     ZombieTier           High
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
@@ -2212,6 +2224,7 @@ BEGIN Object
     Properties           Staff
     Equipment            Clipboard
     ZombieTier           High
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
@@ -2359,6 +2372,7 @@ BEGIN Object
     Properties           Staff
     Equipment            Clipboard
     ZombieTier           Medium
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
@@ -2506,6 +2520,7 @@ BEGIN Object
     Properties           Staff
     Equipment            Clipboard
     ZombieTier           Medium
+    Properties           DoesNotTire
     SpriteVariants       128
     BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END

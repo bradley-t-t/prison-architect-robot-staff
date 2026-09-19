@@ -1,0 +1,626 @@
+
+BEGIN Need
+    Name                 StaffBladder
+    Priority             9
+    FailureAction        Urinate
+    TimeToAction         1200.000
+    TimeToFailure        1500.000
+    StartingActionPoints 33
+    RandomActionPoints   33
+    Chance               0.000000
+    Visibility           Visible
+    Properties           Involuntary
+    Properties           RaisesTemp
+	GenerationRules		 StaffOnly
+END
+
+BEGIN Need
+    Name                 StaffBowels
+    Priority             9
+    FailureAction        SoilSuit
+    TimeToAction         1200.000
+    TimeToFailure        2800.00
+    StartingActionPoints 33
+    RandomActionPoints   33
+    Chance               0.000000
+    Visibility           Visible
+    Properties           Involuntary
+    Properties           RaisesTemp
+	GenerationRules		 StaffOnly
+END
+
+BEGIN Need
+    Name                 StaffFood
+    Priority             8
+    TimeToAction         960.000
+    TimeToFailure        1440.00
+    StartingActionPoints 33
+    RandomActionPoints   33
+    Chance               0.000000
+    Visibility           Visible
+    Properties           RaisesTemp
+	GenerationRules		 StaffOnly
+END
+
+BEGIN Need
+    Name                 StaffSafety
+    Priority             7
+    TimeToAction         -360.000
+    TimeToFailure        -360.000
+    StartingActionPoints 33
+    RandomActionPoints   33
+    Chance               0.000000
+    Visibility           Visible
+	Properties           RaisesTemp
+	GenerationRules		 StaffOnly
+END
+
+BEGIN Need
+    Name                 StaffRecreation
+    Priority             3
+    TimeToAction         2880.00
+    TimeToFailure        2880.00
+    StartingActionPoints 33
+    RandomActionPoints   33
+    Chance               0.000000
+    Visibility           Visible
+	GenerationRules		 StaffOnly
+END
+
+BEGIN Need
+    Name                 StaffComfort
+    Priority             5
+    TimeToAction         1400.000
+    TimeToFailure        2880.00
+    StartingActionPoints 33
+    RandomActionPoints   33
+    Chance               0.000000
+    Visibility           Visible
+	GenerationRules		 StaffOnly
+END
+
+BEGIN Need
+    Name                 StaffEnvironment
+    Priority             5
+    TimeToAction         1440.000
+    TimeToFailure        1440.000
+    StartingActionPoints 33
+    RandomActionPoints   33
+    Chance               0.000000
+    Visibility           Visible
+	GenerationRules		 StaffOnly
+END
+
+BEGIN Need
+    Name                 StaffRest
+    Priority             6
+    TimeToAction         1440.000
+    TimeToFailure        1440.000
+    StartingActionPoints 33
+    RandomActionPoints   33
+    Chance               0.000000
+    Visibility           Visible
+    GenerationRules		 StaffOnly
+    Properties           RaisesTemp
+END
+
+BEGIN Need
+    Name                    StaffWarmth
+    Priority                4
+    Chance                  0.000000
+    TimeToAction            1800.00
+    TimeToFailure           3600.00
+    StartingActionPoints    33
+    RandomActionPoints      33
+    Visibility              Visible
+    Properties              Involuntary
+    Properties              RaisesTemp
+    GenerationRules		    StaffOnly
+END
+
+BEGIN Need
+	Name                    StaffHydration
+	Priority             	11
+	TimeToAction         	960.000
+	TimeToFailure        	1440.00
+	StartingActionPoints 	33
+	RandomActionPoints   	33
+	Chance               	0.000000
+	Visibility           	Visible
+	Properties           	RaisesTemp
+	GenerationRules	        StaffRequired
+	GenerationRules	        StaffOnly
+END
+
+BEGIN Provider
+	Action          Poo
+	ProviderType	Object
+	Object	        Toilet
+	PrimaryNeed	    StaffBowels
+	PrimaryRate	    -5.00000
+	SecondaryNeed	StaffBladder
+	SecondaryRate	-10.0000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Wee
+	ProviderType	Object
+	Object	        Toilet
+	PrimaryNeed	    StaffBladder
+	PrimaryRate	    -10.0000
+	SecondaryNeed	StaffBowels
+	SecondaryRate	-5.00000
+	ActionType	    Use
+END
+
+
+BEGIN Provider
+	Action	        GetMeal
+	ProviderType	Object
+	Object	        ServingTable
+	Slot	        0
+    PrimaryNeed	    StaffFood
+	PrimaryRate	    -20.000000
+	ActionType	    Eat
+END
+
+BEGIN Provider
+	Action	        GetMeal
+	ProviderType	Object
+	Object	        ServingTable
+	Slot	        1
+    PrimaryNeed	    StaffFood
+	PrimaryRate	    -20.000000
+	ActionType	    Eat
+END
+
+BEGIN Provider
+	Action	        GetMeal
+	ProviderType	Object
+	Object	        ServingTable
+	Slot	        2
+    PrimaryNeed	    StaffFood
+	PrimaryRate	    -20.000000
+	ActionType	    Eat
+END
+
+BEGIN Provider
+	Action	        GetMeal
+	ProviderType	Object
+	Object	        ServingTable
+	Slot	        3
+    PrimaryNeed	    StaffFood
+	PrimaryRate	    -20.000000
+	ActionType	    Eat
+END
+
+BEGIN Provider
+	Action	        GetMeal
+	ProviderType	Object
+	Object	        ServingTable
+	Slot	        4
+    PrimaryNeed	    StaffFood
+	PrimaryRate	    -20.000000
+	ActionType	    Eat
+END
+
+BEGIN Provider
+	Action	        GetMeal
+	ProviderType	Object
+	Object	        SmallServingTable
+	Slot	        0
+    PrimaryNeed	    StaffFood
+	PrimaryRate	    -20.000000
+	ActionType	    Eat
+END
+
+BEGIN Provider
+	Action	        GetMeal
+	ProviderType	Object
+	Object	        SmallServingTable
+	Slot	        1
+    PrimaryNeed	    StaffFood
+	PrimaryRate	    -20.000000
+	ActionType	    Eat
+END
+
+BEGIN Provider
+	Action	        GetMeal
+	ProviderType	Object
+	Object	        SmallServingTable
+	Slot	        2
+    PrimaryNeed	    StaffFood
+	PrimaryRate	    -20.000000
+	ActionType	    Eat
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        SmallBench
+	Slot	        0
+    PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        SmallBench
+	Slot	        1
+    PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        Bench
+	Slot	        0
+    PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        Bench
+	Slot	        1
+    PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        Bench
+	Slot	        2
+    PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        Bench
+	Slot	        3
+    PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        OakBench
+	Slot	        0
+    PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        OakBench
+	Slot	        1
+    PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        OakBench
+	Slot	        2
+    PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        Chair
+	Slot	        0
+    PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.200000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        OfficeChair
+	Slot	        0
+	PrimaryNeed	    Comfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        SofaChairDouble
+	Slot	        0
+    PrimaryNeed	    StaffComfort
+	PrimaryRate	    -2.000000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        SofaChairDouble
+	Slot	        1
+    PrimaryNeed	    StaffComfort
+	PrimaryRate	    -2.000000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        SofaChairSingle
+	Slot	        0
+    PrimaryNeed	    StaffComfort
+	PrimaryRate	    -2.000000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        DiningChair
+	Slot	        0
+	PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        WoodenStool
+	Slot	        0
+	PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        MetalStool
+	Slot	        0
+	PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        DinerBooth
+	Slot	        0
+	PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        DinerBooth
+	Slot	        1
+	PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        DinerBooth
+	Slot	        2
+	PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Sit
+	ProviderType	Object
+	Object	        DinerBooth
+	Slot	        3
+	PrimaryNeed	    StaffComfort
+	PrimaryRate	    -0.300000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        ListenToRadio
+	ProviderType	Object
+	Object	        Radio
+	PrimaryNeed	    StaffRecreation
+	PrimaryRate	    -0.20000
+	ActionType	    Use
+    Flags           Passive
+    BroadcastRange  20.0
+END
+
+BEGIN Provider
+	Action	        PlayPool
+	ProviderType	Object
+	Object	        PoolTable
+	Slot	        0
+	PrimaryNeed	    StaffRecreation
+	PrimaryRate	    -4.00000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        PlayPool
+	ProviderType	Object
+	Object	        PoolTable
+	Slot	        1
+	PrimaryNeed	    StaffRecreation
+	PrimaryRate	    -4.00000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        PlayChess
+	ProviderType	Object
+	Object	        ChessTable
+	Slot	        0
+	PrimaryNeed	    StaffRecreation
+	PrimaryRate	    -4.00000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        PlayChess
+	ProviderType	Object
+	Object	        ChessTable
+	Slot	        1
+	PrimaryNeed	    StaffRecreation
+	PrimaryRate	    -4.00000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        WatchTv
+	ProviderType	Object
+	Object	        Tv
+	PrimaryNeed	    StaffRecreation
+	PrimaryRate	    -2.00000
+	SecondaryNeed	StaffComfort
+	SecondaryRate	-0.200000
+	ActionType	    Use
+    BroadcastType   Sit
+    BroadcastRange  3.0
+    Flags           Broadcaster
+END
+
+BEGIN Provider
+	Action	        WatchTv
+	ProviderType	Object
+	Object	        Tv
+	PrimaryNeed	    StaffRecreation
+	PrimaryRate	    -2.00000
+	SecondaryNeed	StaffComfort
+	SecondaryRate	-0.200000
+	ActionType	    Use
+    BroadcastType   Relax
+    BroadcastRange  3.0
+    Flags           Broadcaster
+END
+
+BEGIN Provider
+	Action	        WatchTv
+	ProviderType	Object
+	Object	        LargeTv
+	PrimaryNeed	    StaffRecreation
+	PrimaryRate	    -2.00000
+	SecondaryNeed	StaffComfort
+	SecondaryRate	-0.200000
+	ActionType	    Use
+    BroadcastType   Sit
+    BroadcastRange  7.0
+    Flags           Broadcaster
+END
+
+BEGIN Provider
+	Action	        WatchTv
+	ProviderType	Object
+	Object	        LargeTv
+	PrimaryNeed	    StaffRecreation
+	PrimaryRate	    -2.00000
+	SecondaryNeed	StaffComfort
+	SecondaryRate	-0.200000
+	ActionType	    Use
+    BroadcastType   Relax
+    BroadcastRange  7.0
+    Flags           Broadcaster
+END
+
+BEGIN Provider
+	Action	        PlayingGame
+	ProviderType	Object
+	Object	        ArcadeCabinet
+	PrimaryNeed	    StaffRecreation
+	PrimaryRate	    -3.00000
+	SecondaryNeed	StaffComfort
+	SecondaryRate	-0.200000
+	ActionType	    Use
+    Slot            0
+END
+
+BEGIN Provider
+	Action	        PlayingGame
+	ProviderType	Object
+	Object	        ArcadeCabinet
+	PrimaryNeed	    StaffRecreation
+	PrimaryRate	    -3.00000
+	SecondaryNeed	StaffComfort
+	SecondaryRate	-0.200000
+	ActionType	    Use
+    Slot            1
+END
+
+BEGIN Provider
+	Action	        UseComputer
+	ProviderType	Object
+	Object	        ComputerStation
+	PrimaryNeed		StaffComfort
+	PrimaryRate		-0.200000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        GetSnack
+	ProviderType	Object
+	Object	        SnackMachine
+    PrimaryNeed	    StaffFood
+	PrimaryRate	    -10.000000
+	ActionType	    Use
+	Flags	        Shareable
+END
+
+BEGIN Provider
+	Action	        Drink
+	ProviderType	Object
+	Object	        DrinkMachine
+	Slot	        -1
+	PrimaryNeed	    StaffHydration
+	PrimaryRate	    -30.00000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Drink
+	ProviderType	Object
+	Object	        DrinkingFountain
+	Slot	        -1
+	PrimaryNeed	    StaffHydration
+	PrimaryRate	    -30.00000
+	ActionType	    Use
+END
+
+BEGIN Provider
+	Action	        Drink
+	ProviderType	Object
+	Object	        WaterCooler
+	Slot	        -1
+	PrimaryNeed	    StaffHydration
+	PrimaryRate	    -30.00000
+	ActionType	    Use
+END
