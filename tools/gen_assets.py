@@ -31,14 +31,17 @@ DATA = os.path.join(ROOT, "data")
 # The game measures a sprite sheet in 32-pixel cells. A person is two cells
 # square, and its four pictures sit side by side: front, back, side, blink.
 CELL = 32
-KINDS = ["Guard", "ArmedGuard", "DogHandler"]
+KINDS = list(robots.KINDS)
+GUARDS = ["Guard", "ArmedGuard", "DogHandler"]      # the kinds that are built tougher and never tire
 MODELS = len(robots.MODELS)
+ACROSS = 5                      # kinds to a row of the sheet
+BLOCK = 8                       # cells a kind takes each way: four pictures across, four models down
 # A save made with a mod that gave guards more pictures holds guards numbered
 # past the four models, and a guard whose number has no picture is not drawn.
 # So every number such a save can hold gets one, the four models in turn.
 VARIANTS = 128
-TOUGHER = 2                     # twice the punishment before one goes down
-UPLINK_X = 8                    # the uplink's picture, in cells, beside the robots
+TOUGHER = 5                     # the game divides every blow by Toughness, so this is five times the punishment
+UPLINK_AT = len(KINDS)          # the uplink's picture takes the slot after the last kind
 UPLINK_PRICE = 1500
 
 # The game draws a guard's stab vest over whatever the guard looks like, from a
@@ -59,6 +62,11 @@ NEVER = {
     "Crooked Guards to Normal Guards Ratio": "0.000000",
     "Crooked Guards to Normal Guards Ratio - with Staff Vetting": "0.000000",
 }
+
+
+def slot(k):
+    """Where a kind's block starts on the sheet, in cells."""
+    return (k % ACROSS) * BLOCK, (k // ACROSS) * BLOCK
 
 
 def uplink_sprite():
@@ -87,10 +95,13 @@ def uplink_sprite():
 
 
 def build_sprites():
-    sheet = Image.new("RGBA", (12 * CELL, 2 * MODELS * len(KINDS) * CELL), (0, 0, 0, 0))
+    down = (len(KINDS) + 1 + ACROSS - 1) // ACROSS
+    sheet = Image.new("RGBA", (ACROSS * BLOCK * CELL, down * BLOCK * CELL), (0, 0, 0, 0))
     for k, kind in enumerate(KINDS):
-        sheet.paste(robots.sheet(kind), (0, k * MODELS * 2 * CELL))
-    sheet.paste(uplink_sprite(), (UPLINK_X * CELL, 0))
+        x, y = slot(k)
+        sheet.paste(robots.sheet(kind), (x * CELL, y * CELL))
+    x, y = slot(UPLINK_AT)
+    sheet.paste(uplink_sprite(), (x * CELL, y * CELL))
     return sheet
 
 
@@ -117,25 +128,28 @@ def game_object(materials, name):
     raise SystemExit(f"the game's materials.txt has no {name}")
 
 
-def robot_object(materials, kind, first_row):
+def robot_object(materials, kind, k):
+    x, first_row = slot(k)
     lines = []
     for line in game_object(materials, kind).splitlines()[:-1]:
         tough = re.match(r"(\s*Toughness\s+)([\d.]+)", line)
-        if tough:
+        if tough and kind in GUARDS:
             line = f"{tough.group(1)}{float(tough.group(2)) * TOUGHER:.4f}"
         if re.match(r"\s*(Sprite|SpriteVariants)\s", line):
             continue
         lines.append(line.rstrip())
-    lines.append("    Properties           DoesNotTire")
+    if kind in GUARDS:
+        lines.append("    Properties           DoesNotTire")
     lines.append(f"    SpriteVariants       {VARIANTS}")
     for v in range(VARIANTS):
-        lines.append(f"    BEGIN Sprite x 0 y {first_row + 2 * (v % MODELS)} w 2 h 2 RotateType 1 END")
+        lines.append(f"    BEGIN Sprite x {x} y {first_row + 2 * (v % MODELS)} w 2 h 2 RotateType 1 END")
     lines.append("END")
     return "\n".join(lines) + "\n"
 
 
 def materials_text(materials):
-    out = [robot_object(materials, kind, k * MODELS * 2) for k, kind in enumerate(KINDS)]
+    out = [robot_object(materials, kind, k) for k, kind in enumerate(KINDS)]
+    ux, uy = slot(UPLINK_AT)
     out.append(f"""BEGIN Object
     Name                 RobotUplink
     ConstructionTime     20.0000
@@ -151,8 +165,8 @@ def materials_text(materials):
     Properties           StaticObject
     Properties           Scripted
     NumSprites           1
-    BEGIN ToolbarSprite  x {UPLINK_X}  y 0  w 2  h 2  END
-    BEGIN Sprite         x {UPLINK_X}  y 0  w 2  h 2  RotateType 0  TopAligned false  END
+    BEGIN ToolbarSprite  x {ux}  y {uy}  w 2  h 2  END
+    BEGIN Sprite         x {ux}  y {uy}  w 2  h 2  RotateType 0  TopAligned false  END
 END
 """)
     return "\n".join(out)
@@ -195,8 +209,10 @@ def main():
     if len(sys.argv) != 2:
         raise SystemExit(__doc__)
     game = sys.argv[1]
-    with open(os.path.join(game, "materials.txt"), errors="replace") as f:
-        materials = f.read()
+    materials = ""
+    for name in ("materials.txt", "materials_dlc.txt"):
+        with open(os.path.join(game, name), errors="replace") as f:
+            materials += f.read() + "\n"
     with open(os.path.join(game, "crookedguards_settings.txt"), errors="replace") as f:
         settings = f.read()
     os.makedirs(os.path.join(DATA, "language"), exist_ok=True)

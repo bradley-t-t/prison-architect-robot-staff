@@ -1,7 +1,7 @@
 BEGIN Object
     Name                 Guard
     MoveSpeedFactor      0.500000
-    Toughness            40.0000
+    Toughness            100.0000
     Price                -500
 	Upkeep				 -100
     RenderDepth          2
@@ -149,7 +149,7 @@ END
 BEGIN Object
     Name                 ArmedGuard
     MoveSpeedFactor      0.500000
-    Toughness            30.0000
+    Toughness            75.0000
     Price                -1500
 	Upkeep				 -350
     RenderDepth          2
@@ -164,6 +164,595 @@ BEGIN Object
     Equipment            Shotgun
     ZombieTier           High
     Properties           DoesNotTire
+    SpriteVariants       128
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 6 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 DogHandler
+    MoveSpeedFactor      0.500000
+    Toughness            75.0000
+    Price                -500
+	Upkeep				 -150
+    RenderDepth          2
+    ViewRange            12
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Research             Dogs
+    Properties           Entity
+    Properties           Staff
+    Properties           Guard
+    Equipment            DogLeash
+    ZombieTier           Medium
+    Properties           DoesNotTire
+    SpriteVariants       128
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 6 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 Sniper
+    MoveSpeedFactor      0.500000
+    Toughness            20.0000
+    Price                -2000
+	Upkeep				 -500
+    RenderDepth          5
+    ViewRange            12
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Properties           Entity
+    Properties           Guard
+    Properties           Staff
+    Equipment            Rifle
+    Research             GuardTowers
+    ZombieTier           High
+    SpriteVariants       128
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 6 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 Workman
+    Toughness            5.0000
+    Price                -500
+	Upkeep				 -100
+    RenderDepth          2
+    ViewRange            3
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Properties           Entity
+    Properties           Staff
+    ZombieTier           Low
+    SpriteVariants       128
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 0 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 2 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 4 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 6 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 Foreman
+    Price                -1000
+	Upkeep				 -200
+    RenderDepth          2
+    Toughness            5
+    ViewRange            3
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Research             Maintainance
+    Properties           Entity
+    Properties           Administrator
+    Properties           Staff
+    Equipment            Clipboard
+	MaxAllowed			 5
+    ZombieTier           Medium
     SpriteVariants       128
     BEGIN Sprite x 0 y 8 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 0 y 10 w 2 h 2 RotateType 1 END
@@ -296,23 +885,598 @@ BEGIN Object
 END
 
 BEGIN Object
-    Name                 DogHandler
-    MoveSpeedFactor      0.500000
-    Toughness            30.0000
+    Name                 Cook
     Price                -500
-	Upkeep				 -150
+	Upkeep			     -100
+    Toughness            5
     RenderDepth          2
-    ViewRange            12
     BlockedBy            Wall
     BlockedBy            StaticObject
     BlockedBy            UtilityStation
-    Research             Dogs
+    ViewRange            3
     Properties           Entity
     Properties           Staff
-    Properties           Guard
-    Equipment            DogLeash
-    ZombieTier           Medium
-    Properties           DoesNotTire
+    ZombieTier           Low
+    SpriteVariants       128
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 14 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 Janitor
+    Price                -500
+	Upkeep				 -50
+    Toughness            5
+    RenderDepth          2
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Research             Cleaning
+    Properties           Entity
+    Properties           Staff
+    ZombieTier           Low
+    SpriteVariants       128
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 14 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 Gardener
+    Price                -500
+	Upkeep				 -50
+    Toughness            5
+    RenderDepth          2
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Research             GroundsKeeping
+    Properties           Entity
+    Properties           Staff
+    ZombieTier           Low
+    SpriteVariants       128
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 14 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 Farmer
+    Price                -1000
+	Upkeep				 -150
+    Toughness            5
+    RenderDepth          2
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Properties           Entity
+    Properties           Staff
+	EscapeModeKillXp     25
+    VersionAdded        4000
+    ZombieTier           Low
+    SpriteVariants       128
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 8 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 10 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 12 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 14 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 Doctor
+    Toughness            10.0000
+    Price                -1000
+	Upkeep				 -100
+    Toughness            5
+    RenderDepth          2
+    ViewRange            3
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Research             Health
+    Properties           Entity
+    Properties           Staff
+    Equipment            Needle
+    ZombieTier           Low
     SpriteVariants       128
     BEGIN Sprite x 0 y 16 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 0 y 18 w 2 h 2 RotateType 1 END
@@ -442,6 +1606,1035 @@ BEGIN Object
     BEGIN Sprite x 0 y 18 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 0 y 20 w 2 h 2 RotateType 1 END
     BEGIN Sprite x 0 y 22 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+Name                 	Orderly
+    MoveSpeedFactor      0.500000
+    Toughness            23.0000
+    Price                -500
+	Upkeep				 -75
+    RenderDepth          2
+    ViewRange            12
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+	Research			 Orderly
+    Properties           Entity
+    Properties           Staff
+    Equipment            SedativeSyringe
+	VersionAdded		 2000
+	ToolbarSprite		d_OrderlyToolbar
+    ZombieTier           Medium
+    SpriteVariants       128
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 22 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 Psychiatrist
+    Price                -1000
+	Upkeep				 -200
+    RenderDepth          2
+    Toughness            5
+    ViewRange            3
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Properties           Entity
+    Properties           Administrator
+    Properties           Staff
+	VersionAdded		 2000
+    ZombieTier          Medium
+    SpriteVariants       128
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 22 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 Psychologist
+    Price                -1000
+	Upkeep				 -200
+    RenderDepth          2
+    Toughness            5
+    ViewRange            3
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Research             MentalHealth
+    Properties           Entity
+    Properties           Administrator
+    Properties           Staff
+    ZombieTier           Medium
+    SpriteVariants       128
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 24 y 22 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 Warden
+    Price                -1000
+	Upkeep				 -200
+    RenderDepth          2
+    ViewRange            3
+    Toughness            5
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Research             Warden
+    Properties           Entity
+    Properties           Administrator
+    Properties           Staff
+    Equipment            Clipboard
+    ZombieTier           High
+    SpriteVariants       128
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 16 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 18 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 20 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 32 y 22 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 Chief
+    Price                -1000
+	Upkeep				 -200
+    RenderDepth          2
+    ViewRange            12
+    Toughness            20
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Research             Security
+    Properties           Entity
+    Properties           Administrator
+    Properties           Staff
+    Equipment            Clipboard
+    ZombieTier           High
+    SpriteVariants       128
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 0 y 30 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 Accountant
+    Price                -1000
+	Upkeep				 -200
+    RenderDepth          2
+    Toughness            5
+    ViewRange            3
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Research             Finance
+    Properties           Entity
+    Properties           Administrator
+    Properties           Staff
+    Equipment            Clipboard
+    ZombieTier           Medium
+    SpriteVariants       128
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 8 y 30 w 2 h 2 RotateType 1 END
+END
+
+BEGIN Object
+    Name                 Lawyer
+    Price                -5000
+	Upkeep				 -200
+    Toughness            5
+    RenderDepth          2
+    ViewRange            3
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    Research             Legal
+    Properties           Entity
+    Properties           Administrator
+    Properties           Staff
+    Equipment            Clipboard
+    ZombieTier           Medium
+    SpriteVariants       128
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 24 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 26 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 28 w 2 h 2 RotateType 1 END
+    BEGIN Sprite x 16 y 30 w 2 h 2 RotateType 1 END
 END
 
 BEGIN Object
@@ -459,6 +2652,6 @@ BEGIN Object
     Properties           StaticObject
     Properties           Scripted
     NumSprites           1
-    BEGIN ToolbarSprite  x 8  y 0  w 2  h 2  END
-    BEGIN Sprite         x 8  y 0  w 2  h 2  RotateType 0  TopAligned false  END
+    BEGIN ToolbarSprite  x 24  y 24  w 2  h 2  END
+    BEGIN Sprite         x 24  y 24  w 2  h 2  RotateType 0  TopAligned false  END
 END

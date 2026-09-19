@@ -1,6 +1,7 @@
 # Robot Guards
 
-A Prison Architect mod. Your Guards, Armed Guards and Dog Handlers are robots.
+A Prison Architect mod. Your staff are robots, and the ones that guard are
+built for it.
 
 ## The robots
 
@@ -15,25 +16,36 @@ guard builds:
 | Enforcer | A wedge head with a red T visor, twin stub antennae, plated shoulders and a gold chevron |
 
 Each is drawn from the front, the back and the side, and once more with its
-lights down, which is the game's blink. Guards keep the game's guard blue,
-Armed Guards are gunmetal with a belt of shells, and Dog Handlers are navy with
-a K-9 plate.
+lights down, which is the game's blink.
+
+Every kind of staff is those four models in its own uniform, the colours the
+game dresses that kind in, with its own mark over the top: Guards in guard
+blue, Armed Guards in gunmetal with a belt of shells, Dog Handlers in navy
+with a K-9 plate, Snipers in olive, Workmen and the Foreman in hi-vis with
+reflective stripes, Cooks in white with an apron, Janitors, Gardeners and
+Farmers in their overalls, Doctors, Orderlies and the Psychiatrist with a red
+cross, and the Warden, Chief, Psychologist, Accountant and Lawyer in their
+suits with a gold band.
 
 The game draws a guard's stab vest over whatever the guard looks like, cut to
 a person's shoulders, which on a robot is a dark bib across the chest. The mod
 ships the game's people sheet with the vest's pictures emptied, so a vest
 still protects and is still named on the guard, and nothing is drawn for it.
 
-## What a robot is
+## What a robot guard is
+
+Guards, Armed Guards and Dog Handlers are more than a new look.
 
 - It never tires. The three kinds carry the game's own `DoesNotTire`.
 - It is never corrupt. The mod ships the game's `crookedguards_settings.txt`
   with every line that decides whether a guard turns set out of reach.
-- It takes twice the punishment. Toughness is doubled, and damage works as it
-  always did, so a robot can still be destroyed.
+- It takes five times the punishment. The game divides every blow by the
+  Toughness of whoever it lands on, so Toughness is five times what it was,
+  and damage works as it always did, so a robot can still be destroyed.
 
-Everything else about a guard, its speed, price, wages, equipment and
-research, is read from the game's own definition when the mod is built.
+Everything else about a member of staff, its speed, price, wages, equipment
+and research, is read from the game's own definition when the mod is built,
+and for every kind but those three the look is the only thing that changes.
 
 The Robot Uplink is the backstop. Build one anywhere and it looks at one kind
 of guard every six seconds, tops up the charge of a robot that is flagging and
@@ -45,7 +57,7 @@ The game decides which staff have needs from a list built into it, and Guards
 are on that list, so a mod cannot take the toilet and the canteen away from
 guards alone. The game's own Staff Needs option turns needs off for all staff.
 
-The mod redefines the Guard, the Armed Guard and the Dog Handler, so any other
+The mod redefines every kind of staff, so any other
 mod that does the same, Additional Guard Sprites for one, has to be off, and
 so does any mod that ships its own `people.png`.
 

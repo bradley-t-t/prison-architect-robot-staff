@@ -338,19 +338,46 @@ def enforcer(facing, kit=None):
 
 MODELS = [patrol, heavy, scout, enforcer]
 
-# What marks out the three kinds of guard. Each is the same four models in its
-# own colours, and the armed and dog units wear something over the top: a belt
-# of shells, as the game's Armed Guards do, or the handlers' K-9 plate.
+def shades(colour):
+    """A colour with its lit and its shaded version."""
+    r, g, b = colour
+    hi = tuple(min(255, int(c + (255 - c) * 0.32)) for c in colour) + (255,)
+    lo = tuple(int(c * 0.62) for c in colour) + (255,)
+    return (r, g, b, 255), hi, lo
+
+
+def uniform(coat, trim, plate, kit=None, band=None):
+    """The colours of one kind of staff: the coat the Patrol and the Heavy's
+    pauldrons wear, the trim the Scout and the Enforcer wear and the Patrol's
+    cap is cut from, the plate the Heavy is built from, and what is worn over
+    the top."""
+    out = dict(kit=kit, band=band)
+    for name, colour in (("BLUE", coat), ("NAVY", trim), ("GUN", plate)):
+        out[name], out[name + "_HI"], out[name + "_LO"] = shades(colour)
+    return out
+
+
+# Every kind of staff is the same four models in its own uniform, the colours
+# the game dresses that kind in, with its own mark over the top.
 KINDS = {
     "Guard": dict(),
-    "ArmedGuard": dict(
-        BLUE=(62, 66, 76, 255), BLUE_HI=(98, 104, 116, 255), BLUE_LO=(38, 40, 48, 255),
-        NAVY=(48, 50, 58, 255), NAVY_HI=(84, 88, 100, 255), NAVY_LO=(28, 30, 36, 255),
-        GUN=(40, 42, 50, 255), GUN_HI=(76, 80, 92, 255), GUN_LO=(22, 24, 30, 255), kit="shells"),
-    "DogHandler": dict(
-        BLUE=(30, 44, 74, 255), BLUE_HI=(60, 84, 124, 255), BLUE_LO=(16, 24, 46, 255),
-        NAVY=(24, 34, 60, 255), NAVY_HI=(52, 72, 110, 255), NAVY_LO=(12, 18, 36, 255),
-        GUN=(44, 56, 84, 255), GUN_HI=(74, 92, 126, 255), GUN_LO=(24, 32, 52, 255), kit="k9"),
+    "ArmedGuard": uniform((62, 66, 76), (48, 50, 58), (40, 42, 50), kit="shells"),
+    "DogHandler": uniform((30, 44, 74), (24, 34, 60), (44, 56, 84), kit="k9"),
+    "Sniper": uniform((78, 96, 58), (56, 72, 44), (66, 74, 56), kit="band", band=(38, 48, 30, 255)),
+    "Workman": uniform((226, 214, 72), (206, 190, 52), (92, 96, 104), kit="stripes"),
+    "Foreman": uniform((236, 150, 40), (214, 128, 30), (92, 96, 104), kit="stripes"),
+    "Cook": uniform((232, 232, 226), (208, 208, 200), (120, 124, 132), kit="apron"),
+    "Janitor": uniform((96, 128, 184), (74, 104, 160), (84, 96, 120), kit="band", band=(40, 60, 110, 255)),
+    "Gardener": uniform((86, 150, 70), (64, 124, 54), (80, 100, 76), kit="band", band=(150, 108, 60, 255)),
+    "Farmer": uniform((176, 126, 62), (150, 102, 46), (96, 88, 72), kit="band", band=(86, 150, 70, 255)),
+    "Doctor": uniform((236, 240, 242), (210, 218, 222), (128, 140, 148), kit="cross"),
+    "Orderly": uniform((96, 190, 176), (70, 162, 150), (96, 128, 124), kit="cross"),
+    "Psychiatrist": uniform((150, 120, 170), (124, 96, 146), (104, 96, 116), kit="cross"),
+    "Psychologist": uniform((150, 110, 78), (124, 88, 60), (104, 92, 84), kit="band", band=GOLD),
+    "Warden": uniform((56, 58, 66), (40, 42, 50), (70, 72, 82), kit="band", band=GOLD),
+    "Chief": uniform((38, 84, 108), (30, 50, 78), (70, 76, 88), kit="band", band=GOLD),
+    "Accountant": uniform((120, 124, 132), (96, 100, 110), (84, 88, 98), kit="band", band=GOLD),
+    "Lawyer": uniform((34, 34, 40), (24, 24, 30), (56, 58, 66), kit="band", band=GOLD),
 }
 
 # K, a dash and 9 on a three by five grid.
@@ -359,8 +386,11 @@ LETTERS = {"K": ["1.1", "1.1", "11.", "1.1", "1.1"], "-": ["...", "...", "11.", 
 
 
 def wear(r, kit, facing, half):
-    """Lays a kind's kit over a finished robot. half is how wide the body is
-    where the kit sits."""
+    """Lays a kind's mark over a finished robot. half is how wide the body is
+    where the mark sits."""
+    band = None
+    if isinstance(kit, tuple):
+        kit, band = kit
     if kit == "shells" and facing != "back":
         def shells(d):
             d.rectangle(s(CX - half, 47, CX + half, 51.5), fill=DARK)
@@ -378,6 +408,29 @@ def wear(r, kit, facing, half):
                             d.rectangle(s(x + col * 1.2, 53.2 + row * 1.2, x + col * 1.2 + 1.2, 53.2 + row * 1.2 + 1.2), fill=(240, 244, 248, 255))
                 x += 4.6
         r.part(plate)
+    if kit == "stripes":
+        def stripes(d):
+            for y in (50.5, 55):
+                d.rectangle(s(CX - half - 1, y, CX + half + 1, y + 2.2), fill=(226, 230, 236, 255))
+                d.rectangle(s(CX - half - 1, y + 1.5, CX + half + 1, y + 2.2), fill=(150, 156, 166, 255))
+        r.part(stripes)
+    if kit == "band":
+        def sash(d):
+            d.rectangle(s(CX - half - 2, 55.5, CX + half + 2, 58), fill=band)
+        r.part(sash)
+    if kit == "apron" and facing != "back":
+        def apron(d):
+            off = -3 if facing == "side" else 0
+            d.rounded_rectangle(s(CX - half + 5 + off, 50, CX + half - 5 + off, 61), radius=2 * UP, fill=(250, 250, 246, 255))
+            d.rectangle(s(CX - half + 5 + off, 50, CX + half - 5 + off, 51.5), fill=(200, 200, 194, 255))
+        r.part(apron)
+    if kit == "cross" and facing != "back":
+        def cross(d):
+            x = CX + (-4 if facing == "side" else 0)
+            d.rounded_rectangle(s(x - 5, 51, x + 5, 61), radius=1.5 * UP, fill=(250, 252, 252, 255))
+            d.rectangle(s(x - 1.2, 52.5, x + 1.2, 59.5), fill=(222, 50, 46, 255))
+            d.rectangle(s(x - 3.5, 54.8, x + 3.5, 57.2), fill=(222, 50, 46, 255))
+        r.part(cross)
 
 
 def sheet(kind="Guard"):
@@ -385,6 +438,9 @@ def sheet(kind="Guard"):
     a row, then front, back, side and the blink."""
     theme = dict(KINDS[kind])
     kit = theme.pop("kit", None)
+    band = theme.pop("band", None)
+    if kit == "band":
+        kit = ("band", band)
     saved = {k: globals()[k] for k in theme}
     globals().update(theme)
     try:
