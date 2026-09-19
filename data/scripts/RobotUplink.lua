@@ -26,7 +26,7 @@ local shown = ""
 local function service(kind)
     local n = 0
     for robot in pairs(Find(kind, WHOLE_MAP) or {}) do
-        n = n + 1
+        if (tonumber(robot.Damage) or 0) < 1 then n = n + 1 end     -- a wreck is not online
         local charge = tonumber(robot.Energy)
         if charge and charge < LOW_CHARGE then Set(robot, "Energy", FULL_CHARGE) end
         if robot.Corrupted == true then Set(robot, "Corrupted", false) end
