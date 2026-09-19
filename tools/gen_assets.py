@@ -24,6 +24,7 @@ import sys
 from PIL import Image, ImageChops, ImageDraw
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import card  # noqa: E402
 import robots  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -251,7 +252,8 @@ def main():
         f.write(needs_text(needs))
     with open(os.path.join(DATA, "language", "base-language.txt"), "w") as f:
         f.write(language_text())
-    save_image(build_thumbnail(), os.path.join(ROOT, "thumbnail.png"))
+    save_image(build_thumbnail(), os.path.join(ROOT, "tools", "card-art.png"))
+    card.build(ROOT)
     print("wrote sprites.png, people.png, materials.txt, crookedguards_settings.txt, base-language.txt, thumbnail.png")
 
 
