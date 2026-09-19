@@ -39,17 +39,19 @@ Guards, Armed Guards and Dog Handlers are more than a new look.
 - It never tires. The three kinds carry the game's own `DoesNotTire`.
 - It is never corrupt. The mod ships the game's `crookedguards_settings.txt`
   with every line that decides whether a guard turns set out of reach.
-- It takes five times the punishment. The game divides every blow by the
-  Toughness of whoever it lands on, so Toughness is five times what it was,
-  and damage works as it always did, so a robot can still be destroyed.
+- It cannot be killed. The game divides every blow by the Toughness of
+  whoever it lands on, and a robot guard's is a hundred thousand times a
+  person's, so a blow does nothing that shows. The Robot Uplink repairs
+  whatever damage one still carries.
 
 Everything else about a member of staff, its speed, price, wages, equipment
 and research, is read from the game's own definition when the mod is built,
 and for every kind but those three the look is the only thing that changes.
 
 The Robot Uplink is the backstop. Build one anywhere and it looks at one kind
-of guard every six seconds, tops up the charge of a robot that is flagging and
-wipes clean one that was already corrupt when the mod was switched on.
+of guard every six seconds, tops up the charge of a robot that is flagging,
+repairs one that is damaged and wipes clean one that was already corrupt when
+the mod was switched on.
 
 ## What it cannot do
 

@@ -1,7 +1,7 @@
 BEGIN Object
     Name                 Guard
     MoveSpeedFactor      0.500000
-    Toughness            100.0000
+    Toughness            2000000.0000
     Price                -500
 	Upkeep				 -100
     RenderDepth          2
@@ -149,7 +149,7 @@ END
 BEGIN Object
     Name                 ArmedGuard
     MoveSpeedFactor      0.500000
-    Toughness            75.0000
+    Toughness            1500000.0000
     Price                -1500
 	Upkeep				 -350
     RenderDepth          2
@@ -298,7 +298,7 @@ END
 BEGIN Object
     Name                 DogHandler
     MoveSpeedFactor      0.500000
-    Toughness            75.0000
+    Toughness            1500000.0000
     Price                -500
 	Upkeep				 -150
     RenderDepth          2

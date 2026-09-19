@@ -3,7 +3,7 @@
 -- them and the settings it ships; the uplink is the backstop for a guard who
 -- was already tired or already crooked when the mod was switched on, and for
 -- anything that slips past those settings. It tops up a flagging robot's
--- charge and wipes a corrupted one clean.
+-- charge, wipes a corrupted one clean and repairs whatever damage one carries.
 --
 -- A search of the map is the dearest thing a script can ask the game for, so
 -- the uplink looks at one kind of guard a round and reads two things from
@@ -30,6 +30,8 @@ local function service(kind)
         local charge = tonumber(robot.Energy)
         if charge and charge < LOW_CHARGE then Set(robot, "Energy", FULL_CHARGE) end
         if robot.Corrupted == true then Set(robot, "Corrupted", false) end
+        local damage = tonumber(robot.Damage) or 0
+        if damage > 0 and damage < 1 then Set(robot, "Damage", 0) end
     end
     online[kind] = n
 end

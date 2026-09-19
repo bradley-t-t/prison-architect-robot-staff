@@ -40,7 +40,7 @@ BLOCK = 8                       # cells a kind takes each way: four pictures acr
 # past the four models, and a guard whose number has no picture is not drawn.
 # So every number such a save can hold gets one, the four models in turn.
 VARIANTS = 128
-TOUGHER = 5                     # the game divides every blow by Toughness, so this is five times the punishment
+TOUGHER = 100000                # the game divides every blow by Toughness, so at this a blow does nothing that shows
 UPLINK_AT = len(KINDS)          # the uplink's picture takes the slot after the last kind
 UPLINK_PRICE = 1500
 
