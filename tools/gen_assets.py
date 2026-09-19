@@ -7,7 +7,7 @@ Outputs, relative to the mod root (the parent of this tools/ folder):
   data/crookedguards_settings.txt     the game's own settings with corruption turned off
   data/needs-staff.txt                the game's own staff needs, switched off
   data/language/base-language.txt     names, build-menu text and the tooltip
-  thumbnail.png                       the mod's card image in the game's mod list
+  tools/card-art.png                  the art on the mod's Workshop card; thumbnail.png is exported from Figma
 
 Usage: python gen_assets.py <the game's data folder, unpacked from main.dat>
 
@@ -24,7 +24,6 @@ import sys
 from PIL import Image, ImageChops, ImageDraw
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import card  # noqa: E402
 import robots  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -253,8 +252,7 @@ def main():
     with open(os.path.join(DATA, "language", "base-language.txt"), "w") as f:
         f.write(language_text())
     save_image(build_thumbnail(), os.path.join(ROOT, "tools", "card-art.png"))
-    card.build(ROOT)
-    print("wrote sprites.png, people.png, materials.txt, crookedguards_settings.txt, base-language.txt, thumbnail.png")
+    print("wrote sprites.png, people.png, materials.txt, crookedguards_settings.txt, base-language.txt, tools/card-art.png")
 
 
 if __name__ == "__main__":
