@@ -35,7 +35,7 @@ CELL = 32
 KINDS = list(robots.KINDS)
 GUARDS = ["Guard", "ArmedGuard", "DogHandler"]      # the kinds that cannot be killed
 MODELS = len(robots.MODELS)
-ACROSS = 5                      # kinds to a row of the sheet
+ACROSS = 6                      # eighteen kinds fill three rows of six with no block left over
 BLOCK = 8                       # cells a kind takes each way: four pictures across, four models down
 # A save made with a mod that gave guards more pictures holds guards numbered
 # past the four models, and a guard whose number has no picture is not drawn.
@@ -70,7 +70,13 @@ NEVER = {
 
 
 def slot(k):
-    """Where a kind's block starts on the sheet, in cells."""
+    """Where a kind's block starts on the sheet, in cells. The uplink is one
+    picture two cells wide, so it stands in a column of its own past the last
+    block rather than taking a whole block's room. Every mod's sprites share
+    one atlas in the game, and both sides of a sheet are kept a multiple of
+    64 px, two cells."""
+    if k == UPLINK_AT:
+        return ACROSS * BLOCK, 0
     return (k % ACROSS) * BLOCK, (k // ACROSS) * BLOCK
 
 
@@ -100,8 +106,8 @@ def uplink_sprite():
 
 
 def build_sprites():
-    down = (len(KINDS) + 1 + ACROSS - 1) // ACROSS
-    sheet = Image.new("RGBA", (ACROSS * BLOCK * CELL, down * BLOCK * CELL), (0, 0, 0, 0))
+    down = (len(KINDS) + ACROSS - 1) // ACROSS
+    sheet = Image.new("RGBA", ((ACROSS * BLOCK + 2) * CELL, down * BLOCK * CELL), (0, 0, 0, 0))
     for k, kind in enumerate(KINDS):
         x, y = slot(k)
         sheet.paste(robots.sheet(kind), (x * CELL, y * CELL))
