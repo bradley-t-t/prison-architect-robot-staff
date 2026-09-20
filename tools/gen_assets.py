@@ -1,7 +1,7 @@
 """Builds every generated file the Robot Staff mod ships.
 
 Outputs, relative to the mod root (the parent of this tools/ folder):
-  data/sprites.png                    the robots, a model a row, and the Robot Uplink
+  data/sprites.png                    the robots, a model a row, the Robot Uplink, the drones and their pad
   data/sprite_replacement/            empty pictures for the stab vest, in every uniform pack that draws one
   data/materials.txt                  the game's staff, redefined with the game's own markers on the robots' pictures, and the uplink
   data/crookedguards_settings.txt     the game's own settings with corruption turned off
@@ -14,7 +14,8 @@ Usage: python gen_assets.py <the game's data folder, unpacked from main.dat>
 The three guards are the game's own definitions read from its materials.txt,
 so whatever the game says about a guard's speed, price or equipment is kept.
 Three things change: the pictures, twice the Toughness, and DoesNotTire.
-The script, data/scripts/RobotUplink.lua, is written by hand.
+The scripts, data/scripts/RobotUplink.lua, data/scripts/DroneCharger.lua and
+data/world.lua, are written by hand.
 """
 
 import os
@@ -24,6 +25,7 @@ import sys
 from PIL import Image, ImageChops, ImageDraw
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import drones  # noqa: E402
 import robots  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -44,6 +46,20 @@ VARIANTS = 128
 TOUGHER = 100000                # the game divides every blow by Toughness, so at this a blow does nothing that shows
 UPLINK_AT = len(KINDS)          # the uplink's picture takes the slot after the last kind
 UPLINK_PRICE = 1500
+
+# The drones and their pad go in their own columns past the uplink. A drone is
+# an entity, so its four pictures sit side by side the way a person's do, two
+# cells each; the pad is an object with a picture per state.
+DRONE_AT = ACROSS * BLOCK + 2                   # cell column the drones start at
+PAD_AT = DRONE_AT + 4 * 2                       # and the column the pads start at
+DRONE_MODELS = ("HaulerDrone", "PredatorDrone")
+PAD_PRICE = 3000
+DRONE_TOUGH = 100000            # a drone is a robot, and takes a blow the way one does
+# Where a hauler's load is drawn. The game's own Guard markers put what a
+# person carries at their head and hands; a drone carries it in the cradle
+# slung underneath, which is most of a tile lower.
+CRADLE_DROP = 0.25              # as far down as the lowest of the game's markers can go
+CRADLE_FLOOR = 1.90             # tiles; a marker past this falls outside the picture
 
 # The game draws a guard's stab vest over whatever the guard looks like, cut to
 # a person's shoulders, which on a robot is a dark bib across the chest and
@@ -105,14 +121,30 @@ def uplink_sprite():
     return im.resize((64, 64), Image.LANCZOS)
 
 
+def drone_slot(m):
+    """Where a drone's strip of four pictures starts, in cells."""
+    return DRONE_AT, m * 2
+
+
+def pad_slot(m, live):
+    """Where a pad's picture starts, in cells: a column a state, a row a model."""
+    return PAD_AT + (2 if live else 0), m * 2
+
+
 def build_sprites():
     down = (len(KINDS) + ACROSS - 1) // ACROSS
-    sheet = Image.new("RGBA", ((ACROSS * BLOCK + 2) * CELL, down * BLOCK * CELL), (0, 0, 0, 0))
+    sheet = Image.new("RGBA", ((PAD_AT + 4) * CELL, down * BLOCK * CELL), (0, 0, 0, 0))
     for k, kind in enumerate(KINDS):
         x, y = slot(k)
         sheet.paste(robots.sheet(kind), (x * CELL, y * CELL))
     x, y = slot(UPLINK_AT)
     sheet.paste(uplink_sprite(), (x * CELL, y * CELL))
+    for m, model in enumerate(DRONE_MODELS):
+        x, y = drone_slot(m)
+        sheet.paste(drones.sheet(model), (x * CELL, y * CELL))
+        for live in (False, True):
+            x, y = pad_slot(m, live)
+            sheet.paste(drones.charger(model, live), (x * CELL, y * CELL))
     return sheet
 
 
@@ -190,6 +222,81 @@ def robot_object(game, materials, kind, k):
     return "\n".join(lines) + "\n"
 
 
+def marker_lines(markers, drop=0.0):
+    return "".join(
+        f"\n        BEGIN Marker x {mx:.6f} y {min(my + drop, CRADLE_FLOOR):.6f}"
+        f" orientation.x {ox:.6f} orientation.y {oy:.6f} Index {i} END"
+        for mx, my, ox, oy, i in markers)
+
+
+def drone_objects(game, materials):
+    """The two drones and the pad that builds them.
+
+    A drone is an entity with no BlockedBy of its own, the shape the game gives
+    its Visitors and Actors, so nothing standing in a room turns a flying
+    machine back. It is as tough as a robot guard, which is to say a blow on it
+    does nothing that shows. It is never built from the toolbar; the pad spawns
+    it and data/scripts/DroneCharger.lua flies it.
+    """
+    guard = game_markers(game, materials, "Guard")
+    out = []
+    for m, model in enumerate(DRONE_MODELS):
+        x, y = drone_slot(m)
+        # only the hauler carries anything, so only the hauler's load is moved
+        # down into the cradle
+        drop = CRADLE_DROP if model == "HaulerDrone" else 0.0
+        out.append(f"""BEGIN Object
+    Name                 {model}
+    MoveSpeedFactor      {1.15 if model == "HaulerDrone" else 1.35:.5f}
+    Toughness            {DRONE_TOUGH}.0000
+    RenderDepth          3
+    ViewRange            10
+    NumSlots             1
+    Properties           Entity
+    Properties           DoesNotTire
+    NumSprites           1
+    BEGIN Sprite x {x} y {y} w 2 h 2 RotateType 1{marker_lines(guard, drop)}
+    END
+END
+""")
+    # The pad's pictures in the order its script picks them: a model's dark pad
+    # then its live one, the Hauler's pair first.
+    states = [pad_slot(m, live) for m in range(len(DRONE_MODELS)) for live in (False, True)]
+    sprites = "".join(f"    BEGIN Sprite x {px} y {py} w 2 h 2 RotateType 0 TopAligned false END\n"
+                      for px, py in states)
+    tx, ty = states[0]
+    out.append(f"""BEGIN Object
+    Name                 DroneCharger
+    Width                2
+    Height               2
+    ConstructionTime     20.0000
+    MoveSpeedFactor      0.500000
+    Toughness            200.000
+    Price                -{PAD_PRICE}
+    Filter               Security
+    RenderDepth          1
+    Group                StaticObject
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    MadeOf               SolidMetal
+    Properties           StaticObject
+    Properties           RoomSpecific
+    Properties           Scripted
+    NumSprites           {2 * len(DRONE_MODELS)}
+    BEGIN ToolbarSprite  x {tx}  y {ty}  w 2  h 2  END
+{sprites}END
+
+BEGIN Room
+    Name                 DroneBay
+    BEGIN Requirement Type MinimumSize  x 3  y 3  END
+    BEGIN Requirement Type Object  Id DroneCharger  END
+    BEGIN LikelyObject Id DroneCharger  END
+END
+""")
+    return out
+
+
 def materials_text(game, materials):
     out = [robot_object(game, materials, kind, k) for k, kind in enumerate(KINDS)]
     ux, uy = slot(UPLINK_AT)
@@ -212,6 +319,7 @@ def materials_text(game, materials):
     BEGIN Sprite         x {ux}  y {uy}  w 2  h 2  RotateType 0  TopAligned false  END
 END
 """)
+    out.extend(drone_objects(game, materials))
     return "\n".join(out)
 
 
@@ -251,10 +359,38 @@ def language_text():
     popup = ("Services your robot staff. It recharges any robot that is running low, and it repairs the robots "
              "that guard and wipes clean any of them that has been corrupted. Build one anywhere; it covers the "
              "whole prison.")
+    pad = ("Builds one drone and keeps it charged. The button on the pad switches its drone between the two "
+           "models. A Hauler carries the dead to the morgue and clears rubbish when there are no dead; a "
+           "Predator patrols, or holds station on the pad, and shocks any prisoner it catches in misconduct. "
+           "A drone works within thirty tiles of its pad, so put a pad in each part of the prison you want "
+           "covered. It must stand in a Drone Bay.")
+    bay = ("Where drones are built and charged. Put a Drone Charger in it. It needs three tiles by three, "
+           "and nothing else.")
     rows = [
         ("object_RobotUplink", "Robot Uplink"),
         ("buildtoolbar_popup_obj_RobotUplink", popup),
         ("tooltip_RobotUplink", "*X robots online."),
+        ("object_DroneCharger", "Drone Charger"),
+        ("buildtoolbar_popup_obj_DroneCharger", pad),
+        ("object_HaulerDrone", "Hauler Drone"),
+        ("object_PredatorDrone", "Predator Drone"),
+        ("room_dronebay", "Drone Bay"),
+        ("buildtoolbar_popup_room_dronebay", bay),
+        ("button_DroneRole_Hauler", "Model: Hauler"),
+        ("button_DroneRole_Predator", "Model: Predator"),
+        ("button_DroneDuty_Patrol", "Duty: Patrol"),
+        ("button_DroneDuty_Post", "Duty: Guard Post"),
+        ("tooltip_DroneCharger_Building", "Building its drone."),
+        ("tooltip_DroneCharger_Charging", "Drone docked. Charge *C%."),
+        ("tooltip_DroneCharger_Idle", "Drone standing by. Charge *C%."),
+        ("tooltip_DroneCharger_Returning", "Drone coming home to charge. *C%."),
+        ("tooltip_DroneCharger_Fetching", "Drone on its way to a body. Charge *C%."),
+        ("tooltip_DroneCharger_Carrying", "Drone carrying a body to the morgue. Charge *C%."),
+        ("tooltip_DroneCharger_Nowhere", "No morgue slab free. The drone has set the body down. Charge *C%."),
+        ("tooltip_DroneCharger_Clearing", "Drone clearing rubbish. Charge *C%."),
+        ("tooltip_DroneCharger_Chasing", "Drone closing on a prisoner. Charge *C%."),
+        ("tooltip_DroneCharger_Holding", "Drone holding station. Charge *C%."),
+        ("tooltip_DroneCharger_Patrolling", "Drone on patrol. Charge *C%."),
     ]
     width = max(len(k) for k, _ in rows) + 4
     return "".join(f"{k:<{width}}{v}\n" for k, v in rows)

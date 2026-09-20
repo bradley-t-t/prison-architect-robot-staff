@@ -31854,3 +31854,86 @@ BEGIN Object
     BEGIN ToolbarSprite  x 48  y 0  w 2  h 2  END
     BEGIN Sprite         x 48  y 0  w 2  h 2  RotateType 0  TopAligned false  END
 END
+
+BEGIN Object
+    Name                 HaulerDrone
+    MoveSpeedFactor      1.15000
+    Toughness            100000.0000
+    RenderDepth          3
+    ViewRange            10
+    NumSlots             1
+    Properties           Entity
+    Properties           DoesNotTire
+    NumSprites           1
+    BEGIN Sprite x 50 y 0 w 2 h 2 RotateType 1
+        BEGIN Marker x 0.984380 y 1.015600 orientation.x 0.000000 orientation.y 0.000000 Index 10 END
+        BEGIN Marker x 4.734380 y 1.000000 orientation.x 0.000000 orientation.y 0.000000 Index 10 END
+        BEGIN Marker x 0.515630 y 1.406300 orientation.x 0.000000 orientation.y 0.000000 Index 11 END
+        BEGIN Marker x 1.437500 y 1.390600 orientation.x 0.000000 orientation.y 0.000000 Index 12 END
+        BEGIN Marker x 0.953130 y 1.828100 orientation.x 0.000000 orientation.y 0.000000 Index 13 END
+        BEGIN Marker x 2.546880 y 1.359400 orientation.x 0.000000 orientation.y 0.000000 Index 10 END
+        BEGIN Marker x 3.312500 y 1.359400 orientation.x 0.000000 orientation.y 0.000000 Index 11 END
+        BEGIN Marker x 2.953130 y 1.781300 orientation.x 0.000000 orientation.y 0.000000 Index 12 END
+        BEGIN Marker x 4.578130 y 1.453100 orientation.x 0.000000 orientation.y 0.000000 Index 11 END
+        BEGIN Marker x 5.296880 y 1.437500 orientation.x 0.000000 orientation.y 0.000000 Index 12 END
+        BEGIN Marker x 4.875000 y 1.875000 orientation.x 0.000000 orientation.y 0.000000 Index 13 END
+    END
+END
+
+BEGIN Object
+    Name                 PredatorDrone
+    MoveSpeedFactor      1.35000
+    Toughness            100000.0000
+    RenderDepth          3
+    ViewRange            10
+    NumSlots             1
+    Properties           Entity
+    Properties           DoesNotTire
+    NumSprites           1
+    BEGIN Sprite x 50 y 2 w 2 h 2 RotateType 1
+        BEGIN Marker x 0.984380 y 0.765600 orientation.x 0.000000 orientation.y 0.000000 Index 10 END
+        BEGIN Marker x 4.734380 y 0.750000 orientation.x 0.000000 orientation.y 0.000000 Index 10 END
+        BEGIN Marker x 0.515630 y 1.156300 orientation.x 0.000000 orientation.y 0.000000 Index 11 END
+        BEGIN Marker x 1.437500 y 1.140600 orientation.x 0.000000 orientation.y 0.000000 Index 12 END
+        BEGIN Marker x 0.953130 y 1.578100 orientation.x 0.000000 orientation.y 0.000000 Index 13 END
+        BEGIN Marker x 2.546880 y 1.109400 orientation.x 0.000000 orientation.y 0.000000 Index 10 END
+        BEGIN Marker x 3.312500 y 1.109400 orientation.x 0.000000 orientation.y 0.000000 Index 11 END
+        BEGIN Marker x 2.953130 y 1.531300 orientation.x 0.000000 orientation.y 0.000000 Index 12 END
+        BEGIN Marker x 4.578130 y 1.203100 orientation.x 0.000000 orientation.y 0.000000 Index 11 END
+        BEGIN Marker x 5.296880 y 1.187500 orientation.x 0.000000 orientation.y 0.000000 Index 12 END
+        BEGIN Marker x 4.875000 y 1.625000 orientation.x 0.000000 orientation.y 0.000000 Index 13 END
+    END
+END
+
+BEGIN Object
+    Name                 DroneCharger
+    Width                2
+    Height               2
+    ConstructionTime     20.0000
+    MoveSpeedFactor      0.500000
+    Toughness            200.000
+    Price                -3000
+    Filter               Security
+    RenderDepth          1
+    Group                StaticObject
+    BlockedBy            Wall
+    BlockedBy            StaticObject
+    BlockedBy            UtilityStation
+    MadeOf               SolidMetal
+    Properties           StaticObject
+    Properties           RoomSpecific
+    Properties           Scripted
+    NumSprites           4
+    BEGIN ToolbarSprite  x 58  y 0  w 2  h 2  END
+    BEGIN Sprite x 58 y 0 w 2 h 2 RotateType 0 TopAligned false END
+    BEGIN Sprite x 60 y 0 w 2 h 2 RotateType 0 TopAligned false END
+    BEGIN Sprite x 58 y 2 w 2 h 2 RotateType 0 TopAligned false END
+    BEGIN Sprite x 60 y 2 w 2 h 2 RotateType 0 TopAligned false END
+END
+
+BEGIN Room
+    Name                 DroneBay
+    BEGIN Requirement Type MinimumSize  x 3  y 3  END
+    BEGIN Requirement Type Object  Id DroneCharger  END
+    BEGIN LikelyObject Id DroneCharger  END
+END

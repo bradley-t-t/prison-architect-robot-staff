@@ -68,6 +68,61 @@ met once, in the ordinary way, and does not come back.
 
 The Robot Uplink recharges every kind of robot, not only the guards.
 
+## Drones
+
+A Drone Bay is a room with at least one Drone Charger standing in it, and each
+pad builds one drone and keeps it flying. The pad is what you build; the drone
+is what it sends out. The button on the pad picks which of the two models it
+builds, and switching a pad scraps the drone it had and builds the other.
+
+| Model | Does |
+| :--- | :--- |
+| Hauler | Carries the dead to the morgue. With no body waiting it lifts rubbish and takes it back to the pad, which breaks it down |
+| Predator | Patrols the ground its pad covers, or holds station on it, and shocks any prisoner the game has just recorded in misconduct |
+
+A Predator has a second button for its duty. On patrol it flies to whichever
+prisoner it can see, and to a point somewhere in its pad's ground when it can
+see none. On Guard Post it stays beside its pad and leaves only to chase
+somebody.
+
+A drone works within thirty tiles of its pad and is never sent further, so you
+cover a prison by putting a pad in each part of it rather than by building one
+and waiting. Flying drains the charge and the pad fills it back up. A drone
+that runs low breaks off and comes home, and a Hauler holding something
+delivers it first, so nothing is set down where nobody will look for it.
+
+A Hauler takes a body to the nearest morgue slab that is free, which is the
+slab a guard would have used. That is also what makes it work with the
+Crematorium mod: the drone flies the body into the furnace's own intake and the
+furnace burns it.
+
+### What a Predator counts as misconduct
+
+The game writes down when a prisoner last fought, assaulted a member of staff,
+killed somebody, tried to escape or caused a serious injury, and a Predator
+goes after anybody whose record falls inside the last thirty seconds. It wounds
+and stops: a prisoner already down to a fifth of a life is left alone, so a
+Predator never finishes anybody.
+
+The two clocks have to agree for that to fire. If the clock a script reads ever
+stops matching the one those records are written on, nobody is a target and no
+prisoner is shocked, which is the right way round for a machine that shocks
+people.
+
+### How a drone is flown
+
+Its pad's script flies it. A script on the drone itself would put one on every
+drone in the prison, and the game rebuilds its whole script API into Lua on
+every one of those calls, so the thinking is done once, on the pad. A pad finds
+its own drone by the id it wrote down when it built it.
+
+The one thing written on a drone is its name, and that is a lease. A pad marks
+its drone every second; `data/world.lua` takes the mark off on its sweep and
+removes anything still unmarked when the next sweep comes round. A pad that is
+still standing has marked its drone again long before then. A drone whose pad
+has been dismantled is never marked again, and goes, and whatever it was
+carrying is put down first.
+
 ## Conflicts
 
 The mod redefines every kind of staff, so any other
@@ -79,9 +134,13 @@ so does any mod that replaces the stab vest's pictures in `sprite_replacement`.
 | Path | Holds |
 | :--- | :--- |
 | `tools/robots.py` | Draws the robots |
+| `tools/drones.py` | Draws the drones and their pad |
 | `tools/gen_assets.py` | Builds the sprite sheet, `materials.txt`, the settings file, the language file and the thumbnail from the game's unpacked data folder |
 | `tools/simulate.py` | Runs the uplink script against a stand-in for the game and checks it |
+| `tools/simulate_drones.py` | Runs the pad and the world script against a stand-in for the game and checks what the drones do with it |
 | `data/scripts/RobotUplink.lua` | The uplink, written by hand |
+| `data/scripts/DroneCharger.lua` | The pad, which flies the drone it owns |
+| `data/world.lua` | Clears a drone whose pad has gone, and puts down whatever it was holding |
 
 Install by copying `manifest.txt`, `thumbnail.png` and `data/` into a folder
 under the game's `mods` directory and turning the mod on in the game.

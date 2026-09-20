@@ -1,3 +1,24 @@
-object_RobotUplink                    Robot Uplink
-buildtoolbar_popup_obj_RobotUplink    Services your robot staff. It recharges any robot that is running low, and it repairs the robots that guard and wipes clean any of them that has been corrupted. Build one anywhere; it covers the whole prison.
-tooltip_RobotUplink                   *X robots online.
+object_RobotUplink                     Robot Uplink
+buildtoolbar_popup_obj_RobotUplink     Services your robot staff. It recharges any robot that is running low, and it repairs the robots that guard and wipes clean any of them that has been corrupted. Build one anywhere; it covers the whole prison.
+tooltip_RobotUplink                    *X robots online.
+object_DroneCharger                    Drone Charger
+buildtoolbar_popup_obj_DroneCharger    Builds one drone and keeps it charged. The button on the pad switches its drone between the two models. A Hauler carries the dead to the morgue and clears rubbish when there are no dead; a Predator patrols, or holds station on the pad, and shocks any prisoner it catches in misconduct. A drone works within thirty tiles of its pad, so put a pad in each part of the prison you want covered. It must stand in a Drone Bay.
+object_HaulerDrone                     Hauler Drone
+object_PredatorDrone                   Predator Drone
+room_dronebay                          Drone Bay
+buildtoolbar_popup_room_dronebay       Where drones are built and charged. Put a Drone Charger in it. It needs three tiles by three, and nothing else.
+button_DroneRole_Hauler                Model: Hauler
+button_DroneRole_Predator              Model: Predator
+button_DroneDuty_Patrol                Duty: Patrol
+button_DroneDuty_Post                  Duty: Guard Post
+tooltip_DroneCharger_Building          Building its drone.
+tooltip_DroneCharger_Charging          Drone docked. Charge *C%.
+tooltip_DroneCharger_Idle              Drone standing by. Charge *C%.
+tooltip_DroneCharger_Returning         Drone coming home to charge. *C%.
+tooltip_DroneCharger_Fetching          Drone on its way to a body. Charge *C%.
+tooltip_DroneCharger_Carrying          Drone carrying a body to the morgue. Charge *C%.
+tooltip_DroneCharger_Nowhere           No morgue slab free. The drone has set the body down. Charge *C%.
+tooltip_DroneCharger_Clearing          Drone clearing rubbish. Charge *C%.
+tooltip_DroneCharger_Chasing           Drone closing on a prisoner. Charge *C%.
+tooltip_DroneCharger_Holding           Drone holding station. Charge *C%.
+tooltip_DroneCharger_Patrolling        Drone on patrol. Charge *C%.
