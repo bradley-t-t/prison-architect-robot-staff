@@ -99,15 +99,22 @@ furnace burns it.
 ### What a Predator counts as misconduct
 
 The game writes down when a prisoner last fought, assaulted a member of staff,
-killed somebody, tried to escape or caused a serious injury, and a Predator
-goes after anybody whose record falls inside the last thirty seconds. It wounds
-and stops: a prisoner already down to a fifth of a life is left alone, so a
+killed somebody, tried to escape or caused a serious injury. A Predator watches
+those records rather than reading a clock off them, and goes after a prisoner
+whose record is later than it was the last time the pad looked. It wounds and
+stops: a prisoner already down to a fifth of a life is left alone, so a
 Predator never finishes anybody.
 
-The two clocks have to agree for that to fire. If the clock a script reads ever
-stops matching the one those records are written on, nobody is a target and no
-prisoner is shocked, which is the right way round for a machine that shocks
-people.
+Reading the clock would not have worked. `Game.Time` is `GetHighResTime`, which
+is how long the game has been running, and the records are written on the
+prison's own clock, which a save keeps as `TimeIndex` and which is already well
+ahead of it on the first day. Subtracting one from the other gives a number
+with no meaning. Watching a record move needs neither clock and fires on the
+misconduct itself.
+
+It follows that a prisoner is never shocked for something in their history. The
+first time a pad sees a prisoner it takes the mark and nothing else, so a pad
+just built, or a prison just loaded, goes after nobody.
 
 ### How a drone is flown
 

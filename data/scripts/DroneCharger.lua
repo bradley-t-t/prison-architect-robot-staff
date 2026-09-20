@@ -55,7 +55,7 @@ local STRIKE_RANGE      = 1.8
 local STRIKE_EVERY      = 2.5   -- seconds between shocks
 local STRIKE_BITE       = 0.06  -- of a whole life, per shock
 local STRIKE_CEILING    = 0.8   -- a predator wounds and stops; it never finishes anyone
-local MISCONDUCT_WINDOW = 30    -- seconds after misconduct that a prisoner is a target
+local MISCONDUCT_WINDOW = 45    -- seconds a prisoner stays a target after misconduct
 local ROAM_EVERY        = 14    -- seconds a patrol holds a waypoint before picking another
 
 local NONE = -1
@@ -97,6 +97,8 @@ local roamAt     = -ROAM_EVERY
 local strikeAt   = -STRIKE_EVERY
 local kindTurn   = 0
 local unliftable = {}     -- ids of things a pickup did not take on
+local record     = {}     -- prisoner id -> their misconduct record when last looked at
+local hot        = {}     -- prisoner id -> when this pad saw that record move
 local shown      = ""
 
 -------------------------------------------------------------------------------
@@ -105,10 +107,6 @@ local shown      = ""
 
 local function num(v, fallback)
     return tonumber(v) or fallback
-end
-
-local function stamp()
-    return num(Game.Time(), clock)
 end
 
 local function role()
@@ -479,28 +477,47 @@ end
 -- The predator
 -------------------------------------------------------------------------------
 
--- A prisoner counts as caught while the game's own record of their last
--- misconduct falls inside the window. A record in the future means the clock
--- this script reads is not the clock the record was written on, and then
--- nobody is a target, which is the right way round for a machine that shocks
--- people.
-local function caught(obj, at)
+-- The latest of the game's records of a prisoner's misconduct.
+local function lastCaught(obj)
+    local latest = 0
     for _, field in ipairs(MISCONDUCT) do
         local when = num(Get(obj, field), 0)
-        if when > 0 and at >= when and at - when <= MISCONDUCT_WINDOW then return true end
+        if when > latest then latest = when end
     end
-    return false
+    return latest
 end
 
+-- Misconduct is spotted by watching those records move rather than by reading
+-- the clock off them. Game.Time is how long the game has been running, and the
+-- records are written on the prison's own clock, so nothing sensible comes of
+-- subtracting one from the other. A record that is later than it was the last
+-- time this pad looked at that prisoner is misconduct that has just happened,
+-- whatever either clock says.
+--
+-- A prisoner seen for the first time only sets the mark to measure the next
+-- look against. That is what stops a pad going after everybody with a history
+-- the moment it is built or a save is loaded.
 local function findTarget()
-    local at = stamp()
+    local fresh = {}
     local best, near = nil, nil
     for obj, dist in pairs(Find("Prisoner", WORK_RANGE) or {}) do
-        if num(obj.Damage, 0) < STRIKE_CEILING and not isCorpse(obj) and caught(obj, at) then
-            local d = num(dist, 0)
-            if near == nil or d < near then best, near = obj, d end
+        local id = obj.Id
+        if id then
+            local latest = lastCaught(obj)
+            fresh[id.i] = latest
+            if record[id.i] ~= nil and latest > record[id.i] then
+                hot[id.i] = clock
+            end
+            if hot[id.i] ~= nil and clock - hot[id.i] > MISCONDUCT_WINDOW then
+                hot[id.i] = nil
+            end
+            if hot[id.i] ~= nil and num(obj.Damage, 0) < STRIKE_CEILING and not isCorpse(obj) then
+                local d = num(dist, 0)
+                if near == nil or d < near then best, near = obj, d end
+            end
         end
     end
+    record = fresh
     return best
 end
 

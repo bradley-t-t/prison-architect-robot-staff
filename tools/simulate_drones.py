@@ -319,26 +319,49 @@ def test_predator_shocks_only_the_guilty():
     w = World()
     this, env = pad_at(w, 20, 20)
     env.ButtonPressed_DroneRole()
-    run(env, w, 3)
-    clean = w.make("Prisoner", 24, 20, Damage=0.0)
-    guilty = w.make("Prisoner", 26, 20, Damage=0.0)
-    guilty.TimeOfLastMisconductPrisonerAssault = w.clock - 5
+    clean = w.make("Prisoner", 24, 20, Damage=0.0, TimeOfLastMisconduct=900.0)
+    guilty = w.make("Prisoner", 26, 20, Damage=0.0, TimeOfLastMisconduct=900.0)
+    run(env, w, 12)                 # long enough for the pad to take its marks
+    check("a prisoner with an old record is not attacked for it",
+          float(guilty.Damage) == 0 and float(clean.Damage) == 0)
+    guilty.TimeOfLastMisconductPrisonerAssault = 1234.0    # misconduct, right now
     run(env, w, 60)
-    check("a prisoner caught in misconduct is shocked", float(guilty.Damage) > 0)
-    check("a prisoner who has done nothing is not", float(clean.Damage) == 0)
+    check("a prisoner whose record has just moved is shocked", float(guilty.Damage) > 0)
+    check("a prisoner whose record has not moved is left be", float(clean.Damage) == 0)
     check("the shock stops short of killing", float(guilty.Damage) <= 0.8)
     check("the pad offers a duty button for a Predator", "DroneDuty" in w.buttons)
 
 
-def test_predator_ignores_a_clock_that_does_not_match():
+def test_predator_reads_no_clock():
+    """The records are written on the prison's clock and Game.Time answers with
+    how long the game has been running, so the pad must never subtract one from
+    the other. A record far outside the pad's own clock still has to work."""
     w = World()
     this, env = pad_at(w, 20, 20)
     env.ButtonPressed_DroneRole()
-    run(env, w, 3)
-    later = w.make("Prisoner", 24, 20, Damage=0.0)
-    later.TimeOfLastMisconduct = w.clock + 100000   # a stamp from another clock
-    run(env, w, 40)
-    check("a record from a clock that does not match targets nobody", float(later.Damage) == 0)
+    old = w.make("Prisoner", 24, 20, Damage=0.0, TimeOfLastMisconduct=500000.0)
+    run(env, w, 12)
+    check("a record from far outside this clock is not attacked on sight",
+          float(old.Damage) == 0)
+    old.TimeOfLastMisconduct = 500010.0
+    run(env, w, 60)
+    check("and is shocked once that record moves", float(old.Damage) > 0)
+
+
+def test_predator_lets_a_prisoner_go():
+    w = World()
+    this, env = pad_at(w, 20, 20)
+    env.ButtonPressed_DroneRole()
+    one = w.make("Prisoner", 24, 20, Damage=0.0, TimeOfLastMisconduct=900.0)
+    run(env, w, 12)
+    one.TimeOfLastMisconduct = 950.0
+    run(env, w, 30)
+    check("the shocking starts", float(one.Damage) > 0)
+    run(env, w, 60)                 # well past the window the record opened
+    settled = float(one.Damage)
+    run(env, w, 150)
+    check("and stops once the misconduct is old news", float(one.Damage) == settled)
+    check("the prisoner is left alive", settled < 1.0)
 
 
 def test_predator_holds_its_post():
@@ -408,7 +431,8 @@ CASES = (test_builds_and_marks, test_hauls_a_body_to_a_slab,
          test_clears_rubbish_to_the_pad, test_bodies_come_before_rubbish,
          test_a_stolen_load_is_let_go_of, test_never_flies_past_its_range,
          test_charge_sends_it_home, test_predator_shocks_only_the_guilty,
-         test_predator_ignores_a_clock_that_does_not_match, test_predator_holds_its_post,
+         test_predator_reads_no_clock, test_predator_lets_a_prisoner_go,
+         test_predator_holds_its_post,
          test_switching_model_scraps_the_old_drone,
          test_world_script_clears_an_abandoned_drone, test_cost_stays_low)
 
