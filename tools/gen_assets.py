@@ -3,7 +3,7 @@
 Outputs, relative to the mod root (the parent of this tools/ folder):
   data/sprites.png                    the robots, a model a row, and the Robot Uplink
   data/sprite_replacement/            empty pictures for the stab vest, in every uniform pack that draws one
-  data/materials.txt                  the game's Guard, Armed Guard and Dog Handler, redefined, and the uplink
+  data/materials.txt                  the game's staff, redefined with the game's own markers on the robots' pictures, and the uplink
   data/crookedguards_settings.txt     the game's own settings with corruption turned off
   data/needs-staff.txt                the game's own staff needs, switched off
   data/language/base-language.txt     names, build-menu text and the tooltip
@@ -139,8 +139,40 @@ def game_object(materials, name):
     raise SystemExit(f"the game's materials.txt has no {name}")
 
 
-def robot_object(materials, kind, k):
+def game_markers(game, materials, kind):
+    """The markers the game keeps on a kind's own pictures, measured from the
+    picture's corner: the head and hands, which is where whatever the kind
+    carries is drawn. A sprite with none has what it holds put at the edges of
+    its picture instead. A kind the game gives no markers takes the Guard's."""
+    named = re.search(r"^\s*Sprite\s+(\S+)", game_object(materials, kind), re.M)
+    name = named.group(1) if named else kind
+    for bank in sorted(os.listdir(game)):
+        if not bank.endswith(".spritebank"):
+            continue
+        with open(os.path.join(game, bank), errors="replace") as f:
+            text = f.read()
+        at = re.search(r'Name ' + re.escape(name) + r'\s+x (\S+)\s+y (\S+)\s+w (\S+)\s+h (\S+)', text)
+        if not at:
+            continue
+        x, y, w, h = map(float, at.groups())
+        found = []
+        for m in re.finditer(r"x (\S+)\s+y (\S+)\s+orientation\.x (\S+)\s+orientation\.y (\S+)\s+Index (\d+)",
+                             text[text.find("BEGIN Markers"):]):
+            mx, my, ox, oy = map(float, m.groups()[:4])
+            if x <= mx < x + 4 * w and y <= my < y + h:
+                found.append((mx - x, my - y, ox, oy, int(m.group(5))))
+        if found:
+            return found
+    if kind == "Guard":
+        raise SystemExit("the game's objects.spritebank has no markers for the Guard")
+    return game_markers(game, materials, "Guard")
+
+
+def robot_object(game, materials, kind, k):
     x, first_row = slot(k)
+    markers = "".join(
+        f"\n        BEGIN Marker x {mx:.6f} y {my:.6f} orientation.x {ox:.6f} orientation.y {oy:.6f} Index {i} END"
+        for mx, my, ox, oy, i in game_markers(game, materials, kind))
     lines = []
     for line in game_object(materials, kind).splitlines()[:-1]:
         tough = re.match(r"(\s*Toughness\s+)([\d.]+)", line)
@@ -153,13 +185,13 @@ def robot_object(materials, kind, k):
         lines.append("    Properties           DoesNotTire")
     lines.append(f"    SpriteVariants       {VARIANTS}")
     for v in range(VARIANTS):
-        lines.append(f"    BEGIN Sprite x {x} y {first_row + 2 * (v % MODELS)} w 2 h 2 RotateType 1 END")
+        lines.append(f"    BEGIN Sprite x {x} y {first_row + 2 * (v % MODELS)} w 2 h 2 RotateType 1{markers}\n    END")
     lines.append("END")
     return "\n".join(lines) + "\n"
 
 
-def materials_text(materials):
-    out = [robot_object(materials, kind, k) for k, kind in enumerate(KINDS)]
+def materials_text(game, materials):
+    out = [robot_object(game, materials, kind, k) for k, kind in enumerate(KINDS)]
     ux, uy = slot(UPLINK_AT)
     out.append(f"""BEGIN Object
     Name                 RobotUplink
@@ -253,7 +285,7 @@ def main():
     save_image(build_sprites(), os.path.join(DATA, "sprites.png"))
     write_empty_vests()
     with open(os.path.join(DATA, "materials.txt"), "w") as f:
-        f.write(materials_text(materials))
+        f.write(materials_text(game, materials))
     with open(os.path.join(DATA, "crookedguards_settings.txt"), "w") as f:
         f.write(settings_text(settings))
     with open(os.path.join(game, "needs-staff.txt"), errors="replace") as f:
