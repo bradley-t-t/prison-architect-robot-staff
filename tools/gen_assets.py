@@ -2,7 +2,7 @@
 
 Outputs, relative to the mod root (the parent of this tools/ folder):
   data/sprites.png                    the robots, a model a row, and the Robot Uplink
-  data/people.png                     the game's people sheet with the stab vest taken off it
+  data/sprite_replacement/            empty pictures for the stab vest, in every uniform pack that draws one
   data/materials.txt                  the game's Guard, Armed Guard and Dog Handler, redefined, and the uplink
   data/crookedguards_settings.txt     the game's own settings with corruption turned off
   data/needs-staff.txt                the game's own staff needs, switched off
@@ -45,12 +45,16 @@ TOUGHER = 100000                # the game divides every blow by Toughness, so a
 UPLINK_AT = len(KINDS)          # the uplink's picture takes the slot after the last kind
 UPLINK_PRICE = 1500
 
-# The game draws a guard's stab vest over whatever the guard looks like, from a
-# block of its people sheet cut to a person's shoulders, which on a robot is a
-# dark bib across the chest and halfway up the head. Nobody but the three kinds
-# of guard wears one, so the block is emptied: the vest still protects, and is
-# still named on the guard, and nothing is drawn for it.
-VEST_BLOCK = (1280, 384, 1536, 704)
+# The game draws a guard's stab vest over whatever the guard looks like, cut to
+# a person's shoulders, which on a robot is a dark bib across the chest and
+# halfway up the head. It takes the vest's pictures from its uniform packs, in
+# data/sprite_replacement, and stamps them over the people sheet as it loads,
+# so emptying the sheet itself does nothing. The mod ships an empty picture in
+# place of each one: the vest still protects, and is still named on the guard,
+# and nothing is drawn for it. A pack with no vest of its own uses the default.
+VEST_PACKS = ("default", "GraveyardShift")
+VEST_SPRITES = ("GuardArmour", "GuardArmour2", "GuardArmour3", "GuardArmour4", "GuardArmour5")
+VEST_SIZE = (256, 64)
 
 # Every line of the game's settings that decides whether a guard turns. The
 # counts are made too large to reach rather than zero, which the game may
@@ -114,12 +118,12 @@ def build_thumbnail():
     return im
 
 
-def build_people(game):
-    with Image.open(os.path.join(game, "people.png")) as sheet:
-        sheet = sheet.convert("RGBA")
-    box = VEST_BLOCK
-    sheet.paste(Image.new("RGBA", (box[2] - box[0], box[3] - box[1]), (0, 0, 0, 0)), box[:2])
-    return sheet
+def write_empty_vests():
+    for pack in VEST_PACKS:
+        folder = os.path.join(DATA, "sprite_replacement", pack)
+        os.makedirs(folder, exist_ok=True)
+        for sprite in VEST_SPRITES:
+            Image.new("RGBA", VEST_SIZE, (0, 0, 0, 0)).save(os.path.join(folder, f"{pack}_{sprite}.png"))
 
 
 def game_object(materials, name):
@@ -241,7 +245,7 @@ def main():
         settings = f.read()
     os.makedirs(os.path.join(DATA, "language"), exist_ok=True)
     save_image(build_sprites(), os.path.join(DATA, "sprites.png"))
-    save_image(build_people(game), os.path.join(DATA, "people.png"))
+    write_empty_vests()
     with open(os.path.join(DATA, "materials.txt"), "w") as f:
         f.write(materials_text(materials))
     with open(os.path.join(DATA, "crookedguards_settings.txt"), "w") as f:
@@ -253,7 +257,7 @@ def main():
     with open(os.path.join(DATA, "language", "base-language.txt"), "w") as f:
         f.write(language_text())
     save_image(build_thumbnail(), os.path.join(ROOT, "tools", "card-art.png"))
-    print("wrote sprites.png, people.png, materials.txt, crookedguards_settings.txt, base-language.txt, tools/card-art.png")
+    print("wrote sprites.png, sprite_replacement, materials.txt, crookedguards_settings.txt, base-language.txt, tools/card-art.png")
 
 
 if __name__ == "__main__":

@@ -28,9 +28,10 @@ cross, and the Warden, Chief, Psychologist, Accountant and Lawyer in their
 suits with a gold band.
 
 The game draws a guard's stab vest over whatever the guard looks like, cut to
-a person's shoulders, which on a robot is a dark bib across the chest. The mod
-ships the game's people sheet with the vest's pictures emptied, so a vest
-still protects and is still named on the guard, and nothing is drawn for it.
+a person's shoulders, which on a robot is a dark bib across the chest. The game
+takes the vest's pictures from its uniform packs in `data/sprite_replacement`,
+so the mod ships an empty picture in place of each one. A vest still protects
+and is still named on the guard, and nothing is drawn for it.
 
 ## What a robot guard is
 
@@ -71,7 +72,7 @@ The Robot Uplink recharges every kind of robot, not only the guards.
 
 The mod redefines every kind of staff, so any other
 mod that does the same, Additional Guard Sprites for one, has to be off, and
-so does any mod that ships its own `people.png`.
+so does any mod that replaces the stab vest's pictures in `sprite_replacement`.
 
 ## Layout
 
