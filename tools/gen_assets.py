@@ -55,11 +55,14 @@ PAD_AT = DRONE_AT + 4 * 2                       # and the column the pads start 
 DRONE_MODELS = ("HaulerDrone", "PredatorDrone")
 PAD_PRICE = 3000
 DRONE_TOUGH = 100000            # a drone is a robot, and takes a blow the way one does
-# Where a hauler's load is drawn. The game's own Guard markers put what a
-# person carries at their head and hands; a drone carries it in the cradle
-# slung underneath, which is most of a tile lower.
-CRADLE_DROP = 0.25              # as far down as the lowest of the game's markers can go
-CRADLE_FLOOR = 1.90             # tiles; a marker past this falls outside the picture
+# A marker is where whatever is in slot N sits on the picture, and its index is
+# the slot's number. A hauler has one slot, so it needs one marker, Index 0, and
+# it belongs in the cradle slung under the hull. The head, hand and foot markers
+# the game keeps on its own people, 10 to 13, hold clothing and equipment a
+# drone never wears, so it carries none of them. With no marker at all the game
+# falls back to the edges of the picture, which is a body hanging off the side.
+CRADLE_INDEX = 0
+CRADLE_Y = 1.50                 # tiles down the picture; the cradle's middle
 
 # The game draws a guard's stab vest over whatever the guard looks like, cut to
 # a person's shoulders, which on a robot is a dark bib across the chest and
@@ -222,11 +225,15 @@ def robot_object(game, materials, kind, k):
     return "\n".join(lines) + "\n"
 
 
-def marker_lines(markers, drop=0.0):
+def cradle_markers():
+    """One marker per picture in the strip, all Index 0, so whatever the hauler
+    is holding is drawn in its cradle whichever way it is facing. A RotateType 1
+    strip is four pictures of two tiles each laid side by side, and a marker
+    belongs to the picture its x falls inside."""
     return "".join(
-        f"\n        BEGIN Marker x {mx:.6f} y {min(my + drop, CRADLE_FLOOR):.6f}"
-        f" orientation.x {ox:.6f} orientation.y {oy:.6f} Index {i} END"
-        for mx, my, ox, oy, i in markers)
+        f"\n        BEGIN Marker x {2 * n + 1:.6f} y {CRADLE_Y:.6f}"
+        f" orientation.x 0.000000 orientation.y 0.000000 Index {CRADLE_INDEX} END"
+        for n in range(len(robots.FACINGS)))
 
 
 def drone_objects(game, materials):
@@ -235,27 +242,26 @@ def drone_objects(game, materials):
     A drone is an entity with no BlockedBy of its own, the shape the game gives
     its Visitors and Actors, so nothing standing in a room turns a flying
     machine back. It is as tough as a robot guard, which is to say a blow on it
-    does nothing that shows. It is never built from the toolbar; the pad spawns
-    it and data/scripts/DroneCharger.lua flies it.
+    does nothing that shows. Neither is ever built from the toolbar; the pad
+    spawns one and data/scripts/DroneCharger.lua flies it.
+
+    Only the Hauler carries anything, so only the Hauler has a slot, and having
+    a slot is what makes a marker mean something.
     """
-    guard = game_markers(game, materials, "Guard")
     out = []
     for m, model in enumerate(DRONE_MODELS):
         x, y = drone_slot(m)
-        # only the hauler carries anything, so only the hauler's load is moved
-        # down into the cradle
-        drop = CRADLE_DROP if model == "HaulerDrone" else 0.0
+        carries = model == "HaulerDrone"
         out.append(f"""BEGIN Object
     Name                 {model}
-    MoveSpeedFactor      {1.15 if model == "HaulerDrone" else 1.35:.5f}
+    MoveSpeedFactor      {1.15 if carries else 1.35:.5f}
     Toughness            {DRONE_TOUGH}.0000
     RenderDepth          3
     ViewRange            10
-    NumSlots             1
-    Properties           Entity
+{"    NumSlots             1" + chr(10) if carries else ""}    Properties           Entity
     Properties           DoesNotTire
     NumSprites           1
-    BEGIN Sprite x {x} y {y} w 2 h 2 RotateType 1{marker_lines(guard, drop)}
+    BEGIN Sprite x {x} y {y} w 2 h 2 RotateType 1{cradle_markers() if carries else ""}
     END
 END
 """)

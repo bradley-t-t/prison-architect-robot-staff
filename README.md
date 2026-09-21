@@ -116,6 +116,19 @@ It follows that a prisoner is never shocked for something in their history. The
 first time a pad sees a prisoner it takes the mark and nothing else, so a pad
 just built, or a prison just loaded, goes after nobody.
 
+### Where a Hauler's load is drawn
+
+A marker is where whatever sits in slot N of an object is drawn, and its index
+is that slot's number. The Hauler has one slot, so it carries one marker,
+Index 0, in the middle of the cradle under its hull, repeated once per picture
+in the strip so a body rides in the cradle whichever way the drone is facing.
+An object with a slot and no marker has what it holds drawn at the edges of its
+picture, which is a body hanging off the side.
+
+The head, hand and foot markers the game keeps on its own people, 10 to 13,
+position clothing and equipment. A drone wears none, and the Predator carries
+nothing at all, so it has no slot and no marker.
+
 ### How a drone is flown
 
 Its pad's script flies it. A script on the drone itself would put one on every

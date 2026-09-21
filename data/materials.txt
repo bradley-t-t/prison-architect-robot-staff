@@ -31866,17 +31866,10 @@ BEGIN Object
     Properties           DoesNotTire
     NumSprites           1
     BEGIN Sprite x 50 y 0 w 2 h 2 RotateType 1
-        BEGIN Marker x 0.984380 y 1.015600 orientation.x 0.000000 orientation.y 0.000000 Index 10 END
-        BEGIN Marker x 4.734380 y 1.000000 orientation.x 0.000000 orientation.y 0.000000 Index 10 END
-        BEGIN Marker x 0.515630 y 1.406300 orientation.x 0.000000 orientation.y 0.000000 Index 11 END
-        BEGIN Marker x 1.437500 y 1.390600 orientation.x 0.000000 orientation.y 0.000000 Index 12 END
-        BEGIN Marker x 0.953130 y 1.828100 orientation.x 0.000000 orientation.y 0.000000 Index 13 END
-        BEGIN Marker x 2.546880 y 1.359400 orientation.x 0.000000 orientation.y 0.000000 Index 10 END
-        BEGIN Marker x 3.312500 y 1.359400 orientation.x 0.000000 orientation.y 0.000000 Index 11 END
-        BEGIN Marker x 2.953130 y 1.781300 orientation.x 0.000000 orientation.y 0.000000 Index 12 END
-        BEGIN Marker x 4.578130 y 1.453100 orientation.x 0.000000 orientation.y 0.000000 Index 11 END
-        BEGIN Marker x 5.296880 y 1.437500 orientation.x 0.000000 orientation.y 0.000000 Index 12 END
-        BEGIN Marker x 4.875000 y 1.875000 orientation.x 0.000000 orientation.y 0.000000 Index 13 END
+        BEGIN Marker x 1.000000 y 1.500000 orientation.x 0.000000 orientation.y 0.000000 Index 0 END
+        BEGIN Marker x 3.000000 y 1.500000 orientation.x 0.000000 orientation.y 0.000000 Index 0 END
+        BEGIN Marker x 5.000000 y 1.500000 orientation.x 0.000000 orientation.y 0.000000 Index 0 END
+        BEGIN Marker x 7.000000 y 1.500000 orientation.x 0.000000 orientation.y 0.000000 Index 0 END
     END
 END
 
@@ -31886,22 +31879,10 @@ BEGIN Object
     Toughness            100000.0000
     RenderDepth          3
     ViewRange            10
-    NumSlots             1
     Properties           Entity
     Properties           DoesNotTire
     NumSprites           1
     BEGIN Sprite x 50 y 2 w 2 h 2 RotateType 1
-        BEGIN Marker x 0.984380 y 0.765600 orientation.x 0.000000 orientation.y 0.000000 Index 10 END
-        BEGIN Marker x 4.734380 y 0.750000 orientation.x 0.000000 orientation.y 0.000000 Index 10 END
-        BEGIN Marker x 0.515630 y 1.156300 orientation.x 0.000000 orientation.y 0.000000 Index 11 END
-        BEGIN Marker x 1.437500 y 1.140600 orientation.x 0.000000 orientation.y 0.000000 Index 12 END
-        BEGIN Marker x 0.953130 y 1.578100 orientation.x 0.000000 orientation.y 0.000000 Index 13 END
-        BEGIN Marker x 2.546880 y 1.109400 orientation.x 0.000000 orientation.y 0.000000 Index 10 END
-        BEGIN Marker x 3.312500 y 1.109400 orientation.x 0.000000 orientation.y 0.000000 Index 11 END
-        BEGIN Marker x 2.953130 y 1.531300 orientation.x 0.000000 orientation.y 0.000000 Index 12 END
-        BEGIN Marker x 4.578130 y 1.203100 orientation.x 0.000000 orientation.y 0.000000 Index 11 END
-        BEGIN Marker x 5.296880 y 1.187500 orientation.x 0.000000 orientation.y 0.000000 Index 12 END
-        BEGIN Marker x 4.875000 y 1.625000 orientation.x 0.000000 orientation.y 0.000000 Index 13 END
     END
 END
 
