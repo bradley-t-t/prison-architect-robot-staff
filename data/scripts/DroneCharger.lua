@@ -166,6 +166,30 @@ local function byId(kinds, wantI)
     return nil, nil
 end
 
+-- The same look made round the drone, only as far as the thing can be from
+-- it, and the pad's own look when that turns nothing up. Nearly every search
+-- a busy drone makes is for the one thing it is holding or flying to, and a
+-- search hands back a full record of everyone of that kind in reach, so a
+-- hauler carrying a prisoner's body asked for every prisoner round its pad
+-- once a second. Only what lies in the pad's ground counts, so the answer is
+-- always the one the pad's own look would give.
+local NEAR_SLACK = 4      -- tiles past where the thing was last seen
+local LOAD_REACH = 8      -- tiles; a load was put at the drone a cycle ago
+
+local function byIdNear(unit, kinds, wantI, reach)
+    if unit ~= nil and reach ~= nil and reach < WORK_RANGE and #kinds == 1 then
+        local typ = kinds[1]
+        for obj in pairs(Find(unit, typ, reach) or {}) do
+            local id = obj.Id
+            if id and id.i == wantI then
+                if fromPad(obj) <= WORK_RANGE then return obj, typ end
+                return nil, nil
+            end
+        end
+    end
+    return byId(kinds, wantI)
+end
+
 -------------------------------------------------------------------------------
 -- The drone itself
 -------------------------------------------------------------------------------
@@ -307,7 +331,7 @@ end
 local function load(unit)
     local held = slotOf(unit)
     if held == NONE then return nil end
-    local obj = byId(kindsFor(Get("LoadType"), Get("LoadKind")), held)
+    local obj = byIdNear(unit, kindsFor(Get("LoadType"), Get("LoadKind")), held, LOAD_REACH)
     if obj == nil then return nil end
     if num(Get(obj, "CarrierId.i"), NONE) ~= unit.Id.i then
         clearSlot(unit)
@@ -419,11 +443,24 @@ local function recycle(unit, rubbish)
     return "Clearing"
 end
 
-local function fetch(unit)
+-- How far round the drone the thing it is flying to can be: where it was sent,
+-- which is where that thing stood, and a little more. Nil when it was sent
+-- nowhere.
+local function goalReach(unit)
+    if goalX == nil then return nil end
+    return away(unit, goalX, goalY) + NEAR_SLACK
+end
+
+-- A target the look has just found is the one the pad would find again, so
+-- it is used as it is rather than searched for twice in one cycle.
+local function fetch(unit, found, foundType)
     local wantI = num(Get("TargetI"), NONE)
     if wantI == NONE then return nil end
     local what = Get("TargetKind") or "Rubbish"
-    local obj, typ = byId(kindsFor(Get("TargetType"), what), wantI)
+    local obj, typ = found, foundType
+    if obj == nil or obj.Id == nil or obj.Id.i ~= wantI then
+        obj, typ = byIdNear(unit, kindsFor(Get("TargetType"), what), wantI, goalReach(unit))
+    end
     if obj == nil then
         Set("TargetI", NONE)
         return nil
@@ -454,9 +491,10 @@ local function haul(unit, homeward)
     if homeward then return nil end
 
     -- Bodies first, always, and only while there is a slab free to take one.
+    local target, typ = nil, nil
     if lookTimer >= LOOK_EVERY then
         lookTimer = 0
-        local target, typ, what = nil, nil, "Body"
+        local what = "Body"
         if freeSlab() ~= nil then target, typ = findBody() end
         if target == nil then
             target, typ, what = findRubbish(), "Garbage", "Rubbish"
@@ -470,7 +508,7 @@ local function haul(unit, homeward)
             Set("TargetI", NONE)
         end
     end
-    return fetch(unit)
+    return fetch(unit, target, typ)
 end
 
 -------------------------------------------------------------------------------
@@ -557,15 +595,17 @@ local function prowl(unit, homeward)
         Set("TargetI", NONE)
         return nil
     end
+    local target = nil
     if lookTimer >= LOOK_EVERY then
         lookTimer = 0
-        local target = findTarget()
+        target = findTarget()
         Set("TargetI", target ~= nil and target.Id.i or NONE)
     end
 
     local wantI = num(Get("TargetI"), NONE)
     if wantI ~= NONE then
-        local obj = byId({ "Prisoner" }, wantI)
+        local obj = target
+        if obj == nil then obj = byIdNear(unit, { "Prisoner" }, wantI, goalReach(unit)) end
         if obj ~= nil then
             local x, y = num(obj.Pos.x, 0), num(obj.Pos.y, 0)
             fly(unit, x, y)
