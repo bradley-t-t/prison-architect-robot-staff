@@ -241,8 +241,10 @@ def drone_objects(game, materials):
 
     A drone is an entity with no BlockedBy of its own, the shape the game gives
     its Visitors and Actors, so nothing standing in a room turns a flying
-    machine back. It is as tough as a robot guard, which is to say a blow on it
-    does nothing that shows. Neither is ever built from the toolbar; the pad
+    machine back. It is staff, so a staff door opens for it and the route
+    finder takes it through one as it would a workman; the game pays staff the
+    Upkeep their type names, and a drone names none. It is as tough as a robot
+    guard, which is to say a blow on it does nothing that shows. Neither is ever built from the toolbar; the pad
     spawns one and data/scripts/DroneCharger.lua flies it.
 
     Only the Hauler carries anything, so only the Hauler has a slot, and having
@@ -259,6 +261,7 @@ def drone_objects(game, materials):
     RenderDepth          3
     ViewRange            10
 {"    NumSlots             1" + chr(10) if carries else ""}    Properties           Entity
+    Properties           Staff
     Properties           DoesNotTire
     NumSprites           1
     BEGIN Sprite x {x} y {y} w 2 h 2 RotateType 1{cradle_markers() if carries else ""}
@@ -365,11 +368,11 @@ def language_text():
     popup = ("Services your robot staff. It recharges any robot that is running low, and it repairs the robots "
              "that guard and wipes clean any of them that has been corrupted. Build one anywhere; it covers the "
              "whole prison.")
-    pad = ("Builds one drone and keeps it charged. The button on the pad switches its drone between the two "
-           "models. A Hauler carries the dead to the morgue and clears rubbish when there are no dead; a "
-           "Predator patrols, or holds station on the pad, and shocks any prisoner it catches in misconduct. "
-           "A drone works within thirty tiles of its pad, so put a pad in each part of the prison you want "
-           "covered. It must stand in a Drone Bay.")
+    pad = ("Builds one drone and keeps it charged. Press the button on the pad to switch the drone between "
+           "Hauler, Predator on Patrol and Predator on Guard Post. A Hauler flies the dead from anywhere in the "
+           "prison to the nearest free morgue slab, and clears rubbish within thirty tiles of its pad when there "
+           "are no dead to move. A Predator patrols within thirty tiles of its pad, or holds station on it, and "
+           "shocks any prisoner it catches in misconduct. It must stand in a Drone Bay.")
     bay = ("Where drones are built and charged. Put a Drone Charger in it. It needs three tiles by three, "
            "and nothing else.")
     rows = [
@@ -382,10 +385,9 @@ def language_text():
         ("object_PredatorDrone", "Predator Drone"),
         ("room_dronebay", "Drone Bay"),
         ("buildtoolbar_popup_room_dronebay", bay),
-        ("button_DroneRole_Hauler", "Model: Hauler"),
-        ("button_DroneRole_Predator", "Model: Predator"),
-        ("button_DroneDuty_Patrol", "Duty: Patrol"),
-        ("button_DroneDuty_Post", "Duty: Guard Post"),
+        ("button_DroneMode_Hauler", "Drone: Hauler"),
+        ("button_DroneMode_Patrol", "Drone: Predator on Patrol"),
+        ("button_DroneMode_Post", "Drone: Predator on Guard Post"),
         ("tooltip_DroneCharger_Building", "Building its drone."),
         ("tooltip_DroneCharger_Charging", "Drone docked. Charge *C%."),
         ("tooltip_DroneCharger_Idle", "Drone standing by. Charge *C%."),

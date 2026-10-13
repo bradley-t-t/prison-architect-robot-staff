@@ -31863,6 +31863,7 @@ BEGIN Object
     ViewRange            10
     NumSlots             1
     Properties           Entity
+    Properties           Staff
     Properties           DoesNotTire
     NumSprites           1
     BEGIN Sprite x 50 y 0 w 2 h 2 RotateType 1
@@ -31880,6 +31881,7 @@ BEGIN Object
     RenderDepth          3
     ViewRange            10
     Properties           Entity
+    Properties           Staff
     Properties           DoesNotTire
     NumSprites           1
     BEGIN Sprite x 50 y 2 w 2 h 2 RotateType 1
